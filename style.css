@@ -1,0 +1,19 @@
+@import url("./node_modules/reveal.js/dist/reveal.css");
+@import url("./node_modules/reveal.js/dist/theme/beige.css");
+
+.slides dl {
+  font-size: medium;
+}
+
+.slides dt,
+.slides dd {
+  display: inline;
+}
+
+.slides dt::after {
+  content: ":";
+}
+
+.slides dd {
+  margin-left: 0.5em;
+}
