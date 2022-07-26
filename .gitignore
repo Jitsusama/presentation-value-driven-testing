@@ -1,0 +1,8 @@
+# Build Files
+node_modules/
+dist/
+
+# IDE Files
+.vscode/
+.idea/
+*.iml
