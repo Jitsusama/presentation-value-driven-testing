@@ -26,7 +26,7 @@
         <section>
           <section><h2 class="r-fit-text">Goal</h2></section>
           <section>
-            <h3 class="r-fit-text">Questions to Answer</h3>
+            <h3 class="r-fit-text">To Answer</h3>
             <ul>
               <li class="fragment">
                 <em>Why</em> should we bother writing tests?
@@ -40,17 +40,24 @@
               </li>
               <li class="fragment"><em>Where</em> should these tests live?</li>
             </ul>
+            <aside class="notes">
+              It should be noted that this talk is focused on automated testing.
+            </aside>
           </section>
         </section>
+
         <section>
           <section>
             <h2 class="r-fit-text">Why?</h2>
+            <aside class="notes">
+              Why should we bother writing (automated) tests?
+            </aside>
           </section>
-          <section data-transition="none">
-            <h3 class="r-fit-text">To Verify Functionality</h3>
+          <section>
+            <h3 class="r-fit-text">To Verify</h3>
             <p>A must to ensure we are providing value, yet;</p>
             <ul>
-              <li class="fragment">
+              <li>
                 This often happens haphazardly and is performed inconsistently.
               </li>
               <li class="fragment">
@@ -62,8 +69,15 @@
               </li>
             </ul>
             <aside class="notes">
-              <div style="font-size: smaller">
-                <p>With tests, you can circumnavigate these murky waters:</p>
+              <div style="font-size: medium">
+                <p>
+                  Without verification we lack confidence that we delivered the
+                  customer's needs. When done manually we risk not having the
+                  proper verification taking place.
+                </p>
+                <p>
+                  With automated tests, you can navigate these murky waters:
+                </p>
                 <ul>
                   <li>
                     With programmatically defined tests, a single run will
@@ -76,11 +90,35 @@
                     that failed.
                   </li>
                   <li>
-                    The test runner will consistently run tests the same way
-                    every time.
+                    The programmatic test runner will consistently run tests the
+                    same way every time.
                   </li>
                 </ul>
               </div>
+            </aside>
+          </section>
+          <section>
+            <h3 class="r-fit-text">To Focus</h3>
+            <aside class="notes">
+              Focus work on what is needed to meet the current needs instead of
+              future possibilities.
+            </aside>
+          </section>
+          <section>
+            <h3 class="r-fit-text">To Protect</h3>
+            <aside class="notes">
+              Protect missing when existing functionality has been broken while
+              implementing new functionality. Protect from fixed bugs regressing
+              during future code changes.
+            </aside>
+          </section>
+          <section>
+            <h3 class="r-fit-text">To Document</h3>
+            <aside class="notes">
+              The design of our software, its use cases and give examples of how
+              to work with it. Written documentation is doomed to get out of
+              date, but documentation that is code that is mated with the
+              implementation, can never be out of date.
             </aside>
           </section>
         </section>
