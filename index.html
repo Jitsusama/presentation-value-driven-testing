@@ -46,7 +46,7 @@
           <section>
             <h2 class="r-fit-text">Why?</h2>
           </section>
-          <section>
+          <section data-transition="none">
             <h3 class="r-fit-text">To Verify Functionality</h3>
             <p>A must to ensure we are providing value, yet;</p>
             <ul>
@@ -61,7 +61,27 @@
                 It is difficult to verify whether any shortcuts were taken.
               </li>
             </ul>
-            <!-- TODO - Try to represent above list as what happens without automated tests and then replace with a list showing how tests can help. -->
+            <aside class="notes">
+              <div style="font-size: smaller">
+                <p>With tests, you can circumnavigate these murky waters:</p>
+                <ul>
+                  <li>
+                    With programmatically defined tests, a single run will
+                    consistently perform all tests and can even automatically
+                    trigger them happening on code changes/pushes.
+                  </li>
+                  <li>
+                    The programmatic tests will document the steps &
+                    verifications performed and also provide a report of any
+                    that failed.
+                  </li>
+                  <li>
+                    The test runner will consistently run tests the same way
+                    every time.
+                  </li>
+                </ul>
+              </div>
+            </aside>
           </section>
         </section>
       </div>
