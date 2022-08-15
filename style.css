@@ -17,3 +17,7 @@
 .slides dd {
   margin-left: 0.5em;
 }
+
+.slides h3 {
+  font-size: 3em;
+}

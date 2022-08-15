@@ -1,133 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Value Driven Testing</title>
-  </head>
-  <body>
-    <div class="reveal">
-      <div class="slides">
-        <section>
-          <h1 class="r-fit-text">Value Driven Testing</h1>
-          <h2 class="r-fit-text">
-            The who, what, when, where & why of developer testing
-          </h2>
-          <dl class="center">
-            <dt>Presenter</dt>
-            <dd>
-              Joel Gerber (<a href="mailto:joel.gerber@molex.com"
-                >joel.gerber@molex.com</a
-              >)
-            </dd>
-          </dl>
-        </section>
-        <section>
-          <section><h2 class="r-fit-text">Goal</h2></section>
-          <section>
-            <h3 class="r-fit-text">To Answer</h3>
-            <ul>
-              <li class="fragment">
-                <em>Why</em> should we bother writing tests?
-              </li>
-              <li class="fragment">
-                <em>What</em> type of tests should be written?
-              </li>
-              <li class="fragment"><em>Who</em> should write tests?</li>
-              <li class="fragment">
-                <em>When</em> should these tests be developed?
-              </li>
-              <li class="fragment"><em>Where</em> should these tests live?</li>
-            </ul>
-            <aside class="notes">
-              It should be noted that this talk is focused on automated testing.
-            </aside>
-          </section>
-        </section>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
+  <title>Value Driven Testing</title>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section>
+      <h1 class="r-fit-text">Value Driven Testing</h1>
+      <h2 class="r-fit-text">The who, what, when, where & why of developer testing</h2>
+      <dl class="center">
+        <dt>Presenter</dt>
+        <dd>Joel Gerber (<a href="mailto:joel.gerber@molex.com">joel.gerber@molex.com</a>)</dd>
+      </dl>
+    </section>
+    <section>
+      <section><h2 class="r-fit-text">Goal</h2></section>
+      <section>
+        <h3>To Answer</h3>
+        <ul>
+          <li class="fragment"><em>Why</em> should we bother writing tests?</li>
+          <li class="fragment"><em>What</em> type of tests should be written?</li>
+          <li class="fragment"><em>Who</em> should write tests?</li>
+          <li class="fragment"><em>When</em> should these tests be developed?</li>
+          <li class="fragment"><em>Where</em> should these tests live?</li>
+        </ul>
+        <aside class="notes">
+          It should be noted that this talk is focused on automated testing.
+        </aside>
+      </section>
+    </section>
 
-        <section>
-          <section>
-            <h2 class="r-fit-text">Why?</h2>
-            <aside class="notes">
-              Why should we bother writing (automated) tests?
-            </aside>
-          </section>
-          <section>
-            <h3 class="r-fit-text">To Verify</h3>
-            <p>A must to ensure we are providing value, yet;</p>
+    <section>
+      <section>
+        <h2 class="r-fit-text">Why?</h2>
+        <aside class="notes">
+          Why should we bother writing (automated) tests?
+        </aside>
+      </section>
+      <section>
+        <h3>To Verify</h3>
+        <p class="fragment">A must to ensure we are providing value, yet;</p>
+        <ul>
+          <li class="fragment">This often happens haphazardly and is performed inconsistently.</li>
+          <li class="fragment">It is onerous to record the how or what of manual verifications.</li>
+          <li class="fragment">It is difficult to verify whether any shortcuts were taken.</li>
+        </ul>
+        <aside class="notes">
+          <div style="font-size: medium">
+            <p>
+              Without verification we lack confidence that we delivered the customer's needs. When
+              done manually we risk not having the proper verification taking place.
+            </p>
+            <p>With automated tests, you can navigate these murky waters:</p>
             <ul>
               <li>
-                This often happens haphazardly and is performed inconsistently.
+                With programmatically defined tests, a single run will consistently perform all
+                tests and can even automatically trigger them happening on code changes/pushes.
               </li>
-              <li class="fragment">
-                It is onerous to document the how or what of performed
-                verifications.
+              <li>
+                The programmatic tests will document the steps & verifications performed and also
+                provide a report of any that failed.
               </li>
-              <li class="fragment">
-                It is difficult to verify whether any shortcuts were taken.
+              <li>
+                The programmatic test runner will consistently run tests the same way every time.
               </li>
             </ul>
-            <aside class="notes">
-              <div style="font-size: medium">
-                <p>
-                  Without verification we lack confidence that we delivered the
-                  customer's needs. When done manually we risk not having the
-                  proper verification taking place.
-                </p>
-                <p>
-                  With automated tests, you can navigate these murky waters:
-                </p>
-                <ul>
-                  <li>
-                    With programmatically defined tests, a single run will
-                    consistently perform all tests and can even automatically
-                    trigger them happening on code changes/pushes.
-                  </li>
-                  <li>
-                    The programmatic tests will document the steps &
-                    verifications performed and also provide a report of any
-                    that failed.
-                  </li>
-                  <li>
-                    The programmatic test runner will consistently run tests the
-                    same way every time.
-                  </li>
-                </ul>
-              </div>
-            </aside>
-          </section>
-          <section>
-            <h3 class="r-fit-text">To Protect</h3>
-            <aside class="notes">
-              Protect missing when existing functionality has been broken while
-              implementing new functionality. Protect from fixed bugs regressing
-              during future code changes.
-            </aside>
-          </section>
-          <section>
-            <h3 class="r-fit-text">To Document</h3>
-            <aside class="notes">
-              The design of our software, its use cases and give examples of how
-              to work with it. Written documentation is doomed to get out of
-              date, but documentation that is code that is mated with the
-              implementation, can never be out of date.
-            </aside>
-          </section>
-          <section>
-            <h3 class="r-fit-text">To Design</h3>
-            <aside class="notes"></aside>
-          </section>
-          <section>
-            <h3 class="r-fit-text">To Focus</h3>
-            <aside class="notes">
-              Focus work on what is needed to meet the current needs instead of
-              future possibilities.
-            </aside>
-          </section>
-        </section>
-      </div>
-    </div>
-    <script type="module" src="reveal.js"></script>
-  </body>
+          </div>
+        </aside>
+      </section>
+      <section>
+        <h3>To Protect</h3>
+        <p style="text-align: left">Tests can protect us from value loss by validating:</p>
+        <ul>
+          <li class="fragment">Previously delivered functionality still functions.</li>
+          <li class="fragment">Previously fixed bugs have not been reintroduced.</li>
+        </ul>
+        <aside class="notes">
+          <p>When software of value has been created, there is always the potential for that value
+            to be lost.</p>
+          <p>You can have automated tests triggered on code pushes, or run them manually at any time
+            to have quick feedback before value loss makes it to a customer.</p>
+        </aside>
+      </section>
+      <section>
+        <h3>To Document</h3>
+        <aside class="notes">
+          The design of our software, its use cases and give examples of how to work with it.
+          Written documentation is doomed to get out of date, but documentation that is code that is
+          mated with the implementation, can never be out of date.
+        </aside>
+      </section>
+      <section>
+        <h3>To Design</h3>
+        <aside class="notes"></aside>
+      </section>
+      <section>
+        <h3>To Focus</h3>
+        <aside class="notes">
+          Focus work on what is needed to meet the current needs instead of future possibilities.
+        </aside>
+      </section>
+    </section>
+  </div>
+</div>
+<script type="module" src="reveal.js"></script>
+</body>
 </html>
