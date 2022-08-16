@@ -9,7 +9,7 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <section class="title">
+        <section id="title">
           <h1 class="r-fit-text">Value Driven Testing</h1>
           <h2 class="r-fit-text">The who, what, when, where & why of developer testing</h2>
           <dl class="center">
@@ -17,7 +17,7 @@
             <dd>Joel Gerber (<a href="mailto:joel.gerber@molex.com">joel.gerber@molex.com</a>)</dd>
           </dl>
         </section>
-        <section class="goal">
+        <section id="goal">
           <section><h2 class="r-fit-text">Goal</h2></section>
           <section>
             <h3>To Answer</h3>
@@ -29,14 +29,14 @@
               <li class="fragment"><em>Where</em> should these tests live?</li>
             </ul>
             <aside class="notes">
-              It should be noted that this talk is focused on automated testing.
+              <p>It should be noted that this talk is focused on automated testing.</p>
             </aside>
           </section>
         </section>
-        <section class="why">
+        <section id="why">
           <section>
             <h2 class="r-fit-text">Why?</h2>
-            <aside class="notes">Why should we bother writing (automated) tests?</aside>
+            <aside class="notes"><p>Why should we bother writing (automated) tests?</p></aside>
           </section>
           <section>
             <h3>To Verify</h3>
@@ -163,31 +163,103 @@
             </aside>
           </section>
         </section>
-        <section class="what">
+        <section id="what">
           <section>
             <h2 class="r-fit-text">What?</h2>
-            <aside class="notes">What type of tests should be written?</aside>
+            <aside class="notes"><p>What type of tests should be written?</p></aside>
           </section>
           <section>
             <h3>Functional</h3>
-            <p></p>
-            <ul></ul>
-            <aside class="notes"></aside>
+            <p>These types of tests should:</p>
+            <ul>
+              <li class="fragment">Capture actual user requirements.</li>
+              <li class="fragment">Be clean and readable.</li>
+              <li class="fragment">Test the system/solution like a black box.</li>
+              <li class="fragment">Exercise functionality as a user would engage it.</li>
+            </ul>
+            <aside class="notes">
+              <p>
+                Functional tests serve as a north star. When a functional (E2E/System/Solution) test
+                passes, it identifies that a user requirement has been met.
+              </p>
+              <p>
+                The quantity of functional tests should not exceed the amount of testing required to
+                give confidence that the basic user's requirement have been met. Too many functional
+                tests can cause automated test runs to take too long, slowing down the feedback
+                cycle. Edge cases can be tackled in integrated or unit tests.
+              </p>
+              <p>
+                These tests are quite valuable as living documentation, showing what functionality
+                the solutions supports, and being executable you can always be confident that the
+                delivered value is never lost during future changes.
+              </p>
+            </aside>
           </section>
           <section>
             <h3>Integrated</h3>
-            <p></p>
-            <ul></ul>
-            <aside class="notes"></aside>
+            <p>These types of tests should:</p>
+            <ul>
+              <li class="fragment">
+                Capture happy paths and edge cases supporting a failing functional test.
+              </li>
+              <li class="fragment">Be clean and readable.</li>
+              <li class="fragment">Test a component of a solution like a black box.</li>
+              <li class="fragment">
+                Exercise the component like a client of the component under test would engage it.
+              </li>
+            </ul>
+            <aside class="notes">
+              <p>
+                Integrated tests are useful when testing components that make up a part of a
+                solution. When an integrated test passes, it identifies that this component has
+                satisfied a use case that contributes to a functional test.
+              </p>
+              <p>
+                These help you focus when tackling an individual component, helping you to only work
+                on a single code path at a time.
+              </p>
+              <p>
+                These tests are quite valuable as living documentation, showing what use cases this
+                component is meant to serve, and being executable you can always be confident that
+                the delivered value is never lost during future changes.
+              </p>
+            </aside>
           </section>
           <section>
             <h3>Unit</h3>
-            <p></p>
-            <ul></ul>
-            <aside class="notes"></aside>
+            <p>These types of test should:</p>
+            <ul>
+              <li class="fragment">
+                Capture happy paths and edge cases supporting a failing integration test.
+              </li>
+              <li class="fragment">Be clean and readable.</li>
+              <li class="fragment">
+                Test a single responsibility of a component like a black box.
+              </li>
+              <li class="fragment">
+                Exercise the responsibility's public API like a client of this API under test would
+                engage it.
+              </li>
+            </ul>
+            <aside class="notes">
+              <p>
+                Unit tests are often confused with testing a single function/class/method in
+                isolation. While they can be this, historically a unit was meant to reflect any
+                grouping of code that provides value when being programmatically tested.
+              </p>
+              <p>
+                These can help you focus on single responsibilities of a component, without having
+                to focus on the entire problem that you are currently trying to solve.
+              </p>
+              <p>
+                These tests are quite valuable as living documentation, showing the design of a
+                single component responsibility, and how the API of that responsibility can be
+                engaged.
+              </p>
+            </aside>
           </section>
         </section>
-        <section class="who">
+        <section id="who">
           <section>
             <h2 class="r-fit-text">Who?</h2>
             <aside class="notes">
@@ -199,22 +271,22 @@
             <h3>Quality Assurance</h3>
             <p></p>
             <ul></ul>
-            <aside class="notes"></aside>
+            <aside class="notes"><p></p></aside>
           </section>
           <section>
             <h3>Integration</h3>
             <p></p>
             <ul></ul>
-            <aside class="notes"></aside>
+            <aside class="notes"><p></p></aside>
           </section>
           <section>
             <h3>Component</h3>
             <p></p>
             <ul></ul>
-            <aside class="notes"></aside>
+            <aside class="notes"><p></p></aside>
           </section>
         </section>
-        <section class="when">
+        <section id="when">
           <section>
             <h2 class="r-fit-text">When?</h2>
             <aside class="notes">When should these tests be developed?</aside>
@@ -223,22 +295,22 @@
             <h3>After</h3>
             <p></p>
             <ul></ul>
-            <aside class="notes"></aside>
+            <aside class="notes"><p></p></aside>
           </section>
           <section>
             <h3>Before</h3>
             <p></p>
             <ul></ul>
-            <aside class="notes"></aside>
+            <aside class="notes"><p></p></aside>
           </section>
           <section>
             <h3>Mixture</h3>
             <p></p>
             <ul></ul>
-            <aside class="notes"></aside>
+            <aside class="notes"><p></p></aside>
           </section>
         </section>
-        <section class="where">
+        <section id="where">
           <section>
             <h2 class="r-fit-text">Where?</h2>
             <aside class="notes">Where should these tests live?</aside>
@@ -247,7 +319,7 @@
             <h3>Close to the Source</h3>
             <p></p>
             <ul></ul>
-            <aside class="notes"></aside>
+            <aside class="notes"><p></p></aside>
           </section>
         </section>
       </div>
