@@ -110,7 +110,30 @@
           </section>
           <section>
             <h3>To Design</h3>
-            <aside class="notes"></aside>
+            <p>Tests can provide timely feedback on your design:</p>
+            <ul>
+              <li class="fragment">Hard to write tests often indicate bad designs.</li>
+              <li class="fragment">
+                With TDD, you can get feedback about your design before you've sunk time into
+                implementing it.
+              </li>
+              <li class="fragment">
+                You can see the dependencies and data types of your design within the tests.
+              </li>
+            </ul>
+            <aside class="notes">
+              <p>Hard test design smells:</p>
+              <ul>
+                <li>Too many dependencies implies your code has too many responsibilities.</li>
+                <li>
+                  Too many tests for a particular API implies that it is probably doing too much.
+                </li>
+                <li>
+                  If engaging your API feels weird, it might mean a name change is in order, or the
+                  parameters should be extracted into their own type.
+                </li>
+              </ul>
+            </aside>
           </section>
           <section>
             <h3>To Focus</h3>
