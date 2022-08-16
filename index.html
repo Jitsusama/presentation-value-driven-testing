@@ -59,7 +59,7 @@
               </p>
               <p>
                 When verification is done manually we risk not having the proper verification taking
-                place, or not having been done correctly.
+                place, or having it not done correctly.
               </p>
               <p>With automated verification (testing):</p>
               <ul>
@@ -77,7 +77,7 @@
           </section>
           <section>
             <h3>To Protect</h3>
-            <p style="text-align: left">Tests can protect us from value loss by validating:</p>
+            <p>Tests can protect us from value loss by validating:</p>
             <ul>
               <li class="fragment">Previously delivered functionality still functions.</li>
               <li class="fragment">Previously fixed bugs have not been reintroduced.</li>
@@ -85,7 +85,7 @@
             <aside class="notes">
               <p>
                 When software of value has been created, there is always the potential for that
-                value to be lost.
+                value to be lost as new functionality is added.
               </p>
               <p>
                 You can have automated tests triggered on code pushes, or run them manually at any
@@ -95,23 +95,16 @@
           </section>
           <section>
             <h3>To Document</h3>
-            <p style="text-align: left">
-              Documentation is vital, but often does not track with new changes. When tests are
-              written well, they can serve as living documentation.
-            </p>
-            <p style="text-align: left">For example:</p>
+            <p>Tests are living documentation:</p>
             <ul style="display: block">
               <li class="fragment">Functional tests document use cases.</li>
               <li class="fragment">Unit tests document design.</li>
+              <li class="fragment">Gives examples of how to use your exposed APIs.</li>
             </ul>
             <aside class="notes">
+              <p>Documentation is vital, but often does not track with new changes.</p>
               <p>
                 When your tests serve as documentation, they are guaranteed to never go out of date!
-              </p>
-              <p>
-                They can show others how to use your software's API, and when written well, can read
-                like a narrative showing the dependencies, use cases and giving examples of how to
-                engage with your software.
               </p>
             </aside>
           </section>
