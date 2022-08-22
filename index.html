@@ -36,11 +36,16 @@
         <section id="why">
           <section>
             <h2 class="r-fit-text">Why?</h2>
-            <aside class="notes"><p>Why should we bother writing (automated) tests?</p></aside>
+            <aside class="notes">
+              <p>Why should we bother writing (automated) tests?</p>
+              <p>
+                Ask this as an open-ended question and try to get a few thoughts from the audience.
+              </p>
+            </aside>
           </section>
           <section>
             <h3>To Verify</h3>
-            <p>A must to ensure we are providing value, yet;</p>
+            <p class="fragment">A must to ensure we are providing value, yet;</p>
             <ul>
               <li class="fragment">
                 This often happens haphazardly and is performed inconsistently.
@@ -52,13 +57,13 @@
             </ul>
             <aside class="notes">
               <p>
-                Verification is the process of validating that your software does what it is
-                required to do. Without verification, we lack confidence that we are able to deliver
-                what our customer needs.
+                <em>Before List:</em> Verification is the process of validating that your software
+                does what it is required to do. Without verification, we lack confidence that we are
+                able to deliver what our customer needs.
               </p>
               <p>
-                When verification is done manually we risk not having the proper verification taking
-                place, or having it not done correctly.
+                <em>After List:</em> When verification is done manually we risk not having the
+                proper verification taking place, or not having it done correctly.
               </p>
               <p>With automated verification (testing):</p>
               <ul>
@@ -67,8 +72,8 @@
                   trigger them happening on code changes/pushes.
                 </li>
                 <li>
-                  The test runner can provide a record of the steps & verifications performed and
-                  identify any failed verifications.
+                  The test runner can provide a record of the steps taken & the verifications
+                  performed and identify any failed verifications.
                 </li>
                 <li>The test runner will run verifications the same way every time.</li>
               </ul>
@@ -76,52 +81,64 @@
           </section>
           <section>
             <h3>To Protect</h3>
-            <p>Tests can protect us from value loss by validating:</p>
+            <p class="fragment">Tests can protect us from value loss by validating:</p>
             <ul>
               <li class="fragment">Previously delivered functionality still functions.</li>
               <li class="fragment">Previously fixed bugs have not been reintroduced.</li>
+              <li class="fragment">
+                A record of previously delivered functionality and bug fixes is never lost.
+              </li>
             </ul>
             <aside class="notes">
               <p>
-                When software of value has been created, there is always the potential for that
-                value to be lost as new functionality is added.
+                <em>Before List:</em> When software of value has been created, there is always the
+                potential for that value to be lost as new functionality is added.
               </p>
               <p>
-                You can have automated tests triggered on code pushes, or run them manually at any
-                time to have quick feedback before value loss makes it to a customer.
+                <em>After List:</em> You can have automated tests triggered on code pushes, or run
+                them manually at any time to have quick feedback before value loss makes it to a
+                customer.
               </p>
             </aside>
           </section>
           <section>
             <h3>To Document</h3>
-            <p>Tests are living documentation:</p>
+            <p class="fragment">Tests are living documentation:</p>
             <ul style="display: block">
               <li class="fragment">Functional tests document use cases.</li>
               <li class="fragment">Unit tests document design.</li>
-              <li class="fragment">Gives examples of how to use your exposed APIs.</li>
+              <li class="fragment">Living examples of how to use your exposed APIs.</li>
             </ul>
             <aside class="notes">
-              <p>Documentation is vital, but often does not track with new changes.</p>
               <p>
-                When your tests serve as documentation, they are guaranteed to never go out of date!
+                <em>Before List:</em> Documentation is vital, but often does not track with new
+                changes.
+              </p>
+              <p>
+                <em>After List:</em> When your tests serve as documentation, they are guaranteed to
+                never go out of date!
               </p>
             </aside>
           </section>
           <section>
             <h3>To Design</h3>
-            <p>Tests can provide timely feedback on your design:</p>
+            <p class="fragment">Tests can provide timely feedback on your design:</p>
             <ul>
               <li class="fragment">Hard to write tests often indicate bad designs.</li>
               <li class="fragment">
-                With TDD, you can get feedback about your design before you've sunk time into
-                implementing it.
+                TDD gives feedback about your design before you've sunk too much time into it.
               </li>
               <li class="fragment">
-                You can see the dependencies and data types of your design within the tests.
+                Help document your design and clearly identify its dependencies and data types.
               </li>
             </ul>
             <aside class="notes">
-              <p>Hard test design smells:</p>
+              <p>
+                <em>Before List:</em> Designing software is a skill that requires you to step back
+                and think about the problem you're trying to solve, and then to plan out an
+                evolvable structure for software that can provide a solution to that problem.
+              </p>
+              <p><em>After List:</em> Some design smells tests can expose:</p>
               <ul>
                 <li>Too many dependencies implies your code has too many responsibilities.</li>
                 <li>
@@ -136,7 +153,7 @@
           </section>
           <section>
             <h3>To Focus</h3>
-            <p>Using tests to guide what you do can help focus work:</p>
+            <p class="fragment">Using tests to guide what you do can help focus work:</p>
             <ul>
               <li class="fragment">
                 Starting with a functional test can let you know when core functionality is done.
@@ -152,6 +169,7 @@
               </li>
             </ul>
             <aside class="notes">
+              <p><em>Before List:</em></p>
               <p>
                 Working on new functionality can get overwhelming when the functionality is complex.
                 Using tests to guide what you do next can help tame the complexity beast.
@@ -166,11 +184,16 @@
         <section id="what">
           <section>
             <h2 class="r-fit-text">What?</h2>
-            <aside class="notes"><p>What type of tests should be written?</p></aside>
+            <aside class="notes">
+              <p>What type of tests should be written?</p>
+              <p>
+                Ask this as an open-ended question and try to get a few thoughts from the audience.
+              </p>
+            </aside>
           </section>
           <section>
             <h3>Functional</h3>
-            <p>These types of tests should:</p>
+            <p class="fragment">These types of tests should:</p>
             <ul>
               <li class="fragment">Capture actual user requirements.</li>
               <li class="fragment">Be clean and readable.</li>
@@ -178,26 +201,28 @@
               <li class="fragment">Exercise functionality as a user would engage it.</li>
             </ul>
             <aside class="notes">
+              <p><em>Before List:</em></p>
               <p>
                 Functional tests serve as a north star. When a functional (E2E/System/Solution) test
                 passes, it identifies that a user requirement has been met.
               </p>
+              <p><em>After List:</em></p>
               <p>
-                The quantity of functional tests should not exceed the amount of testing required to
-                give confidence that the basic user's requirement have been met. Too many functional
-                tests can cause automated test runs to take too long, slowing down the feedback
-                cycle. Edge cases can be tackled in integrated or unit tests.
+                The quantity of functional tests should ~= just enough to give confidence that the
+                basic user's requirement have been met. Too many functional tests can slow down test
+                runs, thereby slowing down the feedback cycle. Edge cases can be tackled in
+                integrated or unit tests.
               </p>
               <p>
                 These tests are quite valuable as living documentation, showing what functionality
                 the solutions supports, and being executable you can always be confident that the
-                delivered value is never lost during future changes.
+                delivered value is never lost.
               </p>
             </aside>
           </section>
           <section>
             <h3>Integrated</h3>
-            <p>These types of tests should:</p>
+            <p class="fragment">These types of tests should:</p>
             <ul>
               <li class="fragment">
                 Capture happy paths and edge cases supporting a failing functional test.
@@ -209,14 +234,16 @@
               </li>
             </ul>
             <aside class="notes">
+              <p><em>Before List:</em></p>
               <p>
                 Integrated tests are useful when testing components that make up a part of a
                 solution. When an integrated test passes, it identifies that this component has
                 satisfied a use case that contributes to a functional test.
               </p>
+              <p><em>After List:</em></p>
               <p>
-                These help you focus when tackling an individual component, helping you to only work
-                on a single code path at a time.
+                These tests help you focus when tackling an individual component, directing you to
+                only work on a single code path at a time.
               </p>
               <p>
                 These tests are quite valuable as living documentation, showing what use cases this
@@ -227,7 +254,7 @@
           </section>
           <section>
             <h3>Unit</h3>
-            <p>These types of test should:</p>
+            <p class="fragment">These types of test should:</p>
             <ul>
               <li class="fragment">
                 Capture happy paths and edge cases supporting a failing integration test.
@@ -242,14 +269,16 @@
               </li>
             </ul>
             <aside class="notes">
+              <p><em>Before List:</em></p>
               <p>
                 Unit tests are often confused with testing a single function/class/method in
                 isolation. While they can be this, historically a unit was meant to reflect any
                 grouping of code that provides value when being programmatically tested.
               </p>
+              <p><em>After List:</em></p>
               <p>
-                These can help you focus on single responsibilities of a component, without having
-                to focus on the entire problem that you are currently trying to solve.
+                These tests can help you focus on single responsibilities of a component, without
+                having to focus on the entire problem that you are currently trying to solve.
               </p>
               <p>
                 These tests are quite valuable as living documentation, showing the design of a
