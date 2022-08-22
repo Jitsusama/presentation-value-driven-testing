@@ -364,25 +364,110 @@
         <section id="when">
           <section>
             <h2 class="r-fit-text">When?</h2>
-            <aside class="notes">When should these tests be developed?</aside>
+            <aside class="notes">
+              <p>When should these tests be developed?</p>
+              <p>
+                Ask this as an open-ended question and try to get a few thoughts from the audience.
+              </p>
+            </aside>
           </section>
           <section>
             <h3>After</h3>
-            <p></p>
-            <ul></ul>
-            <aside class="notes"><p></p></aside>
+            <ul id="when-after-list">
+              <li class="fragment">You start writing production code quicker.</li>
+              <li class="fragment">It takes longer to finish the production code.</li>
+              <li class="fragment">You get late feedback on your design.</li>
+              <li class="fragment">The tests are harder to write.</li>
+              <li class="fragment">Often doesn't happen.</li>
+            </ul>
+            <aside class="notes">
+              <p>When you write tests after the production code is written:</p>
+              <ul>
+                <li>Because you don't have to think first, you can start writing code sooner.</li>
+                <li>
+                  But the finished code takes longer as you were not forced to think through the
+                  problem before trying to solve it.
+                </li>
+                <li>
+                  Since you don't get test feedback on your design early on, its often too late to
+                  act on what it tells you as too much time has been sunk into it.
+                </li>
+                <li>
+                  Since the code wasn't written with tests in mind, the tests are harder to write
+                  and often require redesigns of your production code.
+                </li>
+                <li>
+                  At the end of a development cycle, time crunches are real which cause left over
+                  things to be dropped, such as tests.
+                </li>
+              </ul>
+            </aside>
           </section>
           <section>
             <h3>Before</h3>
-            <p></p>
-            <ul></ul>
-            <aside class="notes"><p></p></aside>
+            <ul id="when-before-list">
+              <li class="fragment">You start writing production code later.</li>
+              <li class="fragment">It takes less time to finish the production code.</li>
+              <li class="fragment">You get early feedback on your design.</li>
+              <li class="fragment">The tests are easier to write.</li>
+              <li class="fragment">You have the time to write them.</li>
+            </ul>
+            <aside class="notes">
+              <p>When you write tests before the production code is written:</p>
+              <ul>
+                <li>
+                  By being forced to think through the problem in order to write a test for it,
+                  starting to write the solution gets delayed.
+                </li>
+                <li>
+                  Since the problem has already been thought through, it takes less time to write
+                  the final solution.
+                </li>
+                <li>
+                  You can get feedback on the design before you implement it, so its really quick
+                  and cheap to act on any feedback you get.
+                </li>
+                <li>
+                  With the problem new and fresh on your mind, and without having production code
+                  already written to constrain setting it up in the test, tests are quicker to
+                  write.
+                </li>
+                <li>
+                  With the tests happening first, and having the constraint that the solution cannot
+                  be shipped without the code being written, you should always be able to have the
+                  tests written.
+                </li>
+              </ul>
+            </aside>
           </section>
           <section>
             <h3>Mixture</h3>
-            <p></p>
-            <ul></ul>
-            <aside class="notes"><p></p></aside>
+            <p>Reality is rarely so simple. For brownfield code:</p>
+            <ol>
+              <li class="fragment">Selectively write tests around existing code.</li>
+              <li class="fragment">Safely improve the existing design.</li>
+              <li class="fragment">Write tests for what is new.</li>
+            </ol>
+            <aside class="notes">
+              <p>
+                On a brownfield system you will often have a lot of untested code. There are
+                strategies you can use to safely introduce changes:
+              </p>
+              <ul>
+                <li>
+                  Identify the area of the solution that will have to be touched to introduce
+                  changes and write tests around its existing functionality.
+                </li>
+                <li>
+                  With the protection of tests around the existing code, redesign it to improve its
+                  quality.
+                </li>
+                <li>
+                  Write new functional/integration/unit tests for the new functionality that is to
+                  be introduced.
+                </li>
+              </ul>
+            </aside>
           </section>
         </section>
         <section id="where">

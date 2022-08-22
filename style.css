@@ -21,3 +21,23 @@
 .slides h3 {
   font-size: 3em;
 }
+
+@counter-style when-after-emojis {
+  system: cyclic;
+  symbols: "😊" "😞" "😥" "😰" "😭";
+  suffix: " ";
+}
+
+#when-after-list {
+  list-style-type: when-after-emojis;
+}
+
+@counter-style when-before-emojis {
+  system: cyclic;
+  symbols: "😥" "😊" "🧐" "🤓" "😎";
+  suffix: " ";
+}
+
+#when-before-list {
+  list-style-type: when-before-emojis;
+}
