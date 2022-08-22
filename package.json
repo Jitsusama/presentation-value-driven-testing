@@ -1,12 +1,12 @@
 {
-  "name": "revealjs-pres",
+  "name": "value-driven-testing",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0-a1",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build --base ./",
-    "preview": "vite preview"
+    "dev": "vite src",
+    "build": "vite build --outDir ../dist src",
+    "preview": "vite preview src"
   },
   "dependencies": {
     "reveal.js": "^4.3.1"
