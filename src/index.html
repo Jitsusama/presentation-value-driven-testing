@@ -89,9 +89,8 @@
                 potential for that value to be lost as new functionality is added.
               </p>
               <p>
-                <em>At End:</em> You can have automated tests triggered on code pushes, or run them
-                manually at any time to have quick feedback before value loss makes it to a
-                customer.
+                <em>At End:</em> With automated tests you are able to get a quick indication of
+                value loss before it makes it to the customer.
               </p>
             </aside>
           </section>
@@ -101,7 +100,9 @@
             <ul style="display: block">
               <li class="fragment">Functional tests document use cases.</li>
               <li class="fragment">Unit tests document design.</li>
-              <li class="fragment">Living examples of how to use your exposed APIs.</li>
+              <li class="fragment">
+                Both function as living examples of how to interface with your APIs.
+              </li>
             </ul>
             <aside class="notes">
               <p>
@@ -120,7 +121,7 @@
             <ul>
               <li class="fragment">Hard to write tests often indicate bad designs.</li>
               <li class="fragment">
-                TDD gives feedback about your design before you've sunk too much time into it.
+                Can give feedback about your design before you've sunk too much time into it.
               </li>
               <li class="fragment">
                 Help document your design and clearly identify its dependencies and data types.
@@ -128,39 +129,39 @@
             </ul>
             <aside class="notes">
               <p>
-                <em>At Start:</em> Designing software is a skill that requires you to step back and
-                think about the problem you're trying to solve, and then to plan out an evolvable
-                structure for software that can provide a solution to that problem.
+                <em>At Start:</em> Software design is a skill that requires you to step back and
+                think about the problem you're trying to solve and then plan out an evolvable
+                structure that a solution can be built on.
               </p>
-              <p><em>At End:</em> Some design smells tests can expose:</p>
+              <p><em>At End:</em> Some example design feedbacks (smells) tests can expose:</p>
               <ul>
                 <li>Too many dependencies implies your code has too many responsibilities.</li>
                 <li>
                   Too many tests for a particular API implies that it is probably doing too much.
                 </li>
                 <li>
-                  If engaging your API feels weird, it might mean a name change is in order, or the
-                  parameters should be extracted into their own type.
+                  If engaging your API feels weird, it might mean a name change is in order, or that
+                  some parameters should be extracted into their own type.
                 </li>
               </ul>
             </aside>
           </section>
           <section>
             <h3>To Focus</h3>
-            <p class="fragment">Using tests to guide what you do can help focus work:</p>
+            <p class="fragment">How tests can guide you to more focused work:</p>
             <ul>
               <li class="fragment">
-                Starting with a functional test can let you know when core functionality is done.
+                Functional tests force you to think about the problem before solving it.
               </li>
               <li class="fragment">
-                You can stub out failing unit tests for the pieces of functionality that have to be
-                written.
+                Unit tests help break down the problem into smaller parts that can be tackled one at
+                a time.
               </li>
-              <li class="fragment">Failing tests can identify work left to be done.</li>
               <li class="fragment">
-                Flesh out the unit test you want to work on first and then write just enough code to
-                make it pass to reduce wasteful coding.
+                Going from a functional test and then diving into supporting unit tests reduces
+                wasteful coding.
               </li>
+              <li class="fragment">Failing tests can identify what to work on next.</li>
             </ul>
             <aside class="notes">
               <p><em>At Start:</em></p>
@@ -169,15 +170,15 @@
                 Using tests to guide what you do next can help tame the complexity beast.
               </p>
               <p>
-                This helps to focus work on what is needed to meet the current needs instead of
-                future possibilities.
+                This helps to focus work on what is needed to meet current needs instead of future
+                uncertainties.
               </p>
             </aside>
           </section>
         </section>
         <section>
           <q>We only see what we know.</q>
-          <p style="font-size: small">&mdash; Goethe</p>
+          <p style="font-size: 0.5em">&mdash; Goethe</p>
         </section>
         <section id="what">
           <section>
@@ -289,7 +290,7 @@
         </section>
         <section>
           <q>All code is guilty until proven innocent.</q>
-          <p>&mdash; Anonymous</p>
+          <p style="font-size: 0.5em">&mdash; Anonymous</p>
         </section>
         <section id="who">
           <section>
@@ -370,7 +371,7 @@
             >The problem is not that testing is the bottleneck. The problem is that you don’t know
             what's in the bottle. That's a problem that testing addresses.</q
           >
-          <p>&mdash; Michael Bolton</p>
+          <p style="font-size: 0.5em">&mdash; Michael Bolton</p>
         </section>
         <section id="when">
           <section>
@@ -484,7 +485,7 @@
         </section>
         <section>
           <q>Write tests until fear is transformed into boredom</q>
-          <p>&mdash; Kent Beck</p>
+          <p style="font-size: 0.5em">&mdash; Kent Beck</p>
         </section>
         <section id="where">
           <section>
@@ -512,7 +513,7 @@
         </section>
         <section>
           <q>I think when you hear the phrase "it's just test code". To me that's a code smell.</q>
-          <p>&mdash; Alan Page</p>
+          <p style="font-size: 0.5em">&mdash; Alan Page</p>
         </section>
       </div>
     </div>
