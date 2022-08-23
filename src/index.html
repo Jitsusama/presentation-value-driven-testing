@@ -12,16 +12,17 @@
         <section id="title">
           <h1 class="r-fit-text">Value Driven Testing</h1>
           <h2 class="r-fit-text">The who, what, when, where & why of developer testing</h2>
-          <dl class="center">
-            <dt>Presenter</dt>
-            <dd>Joel Gerber (<a href="mailto:joel.gerber@molex.com">joel.gerber@molex.com</a>)</dd>
-          </dl>
+          <p style="font-size: 0.5em">
+            Presented by Joel Gerber (<a href="mailto:joel.gerber@molex.com"
+              >joel.gerber@molex.com</a
+            >)
+          </p>
         </section>
         <section id="goal">
           <section><h2 class="r-fit-text">Goal</h2></section>
           <section>
             <h3>To Answer</h3>
-            <ul>
+            <ul style="list-style-type: questions">
               <li class="fragment"><em>Why</em> should we bother writing tests?</li>
               <li class="fragment"><em>What</em> types of tests should be written?</li>
               <li class="fragment"><em>Who</em> should write these tests?</li>
@@ -57,8 +58,10 @@
             <h3>To Verify</h3>
             <p class="fragment">Verification is needed, yet;</p>
             <ul>
-              <li class="fragment">It often happens haphazardly and inconsistently.</li>
-              <li class="fragment">It is onerous to record the how or what of manual tests.</li>
+              <li class="fragment">It often happens haphazardly or inconsistently.</li>
+              <li class="fragment">
+                It is time-consuming to record the how or what of manual test runs.
+              </li>
               <li class="fragment">It is hard to know if any shortcuts were taken.</li>
             </ul>
             <aside class="notes">
@@ -78,8 +81,8 @@
                   on code changes/pushes.
                 </li>
                 <li>
-                  The test runner can provide a record of the steps taken, verifications performed
-                  and identify any failed verifications.
+                  The test runner can automatically provide a record of the steps taken,
+                  verifications performed and identify any failed verifications.
                 </li>
                 <li>The test runner will run verifications the same way every time.</li>
               </ul>
@@ -89,10 +92,10 @@
             <h3>To Protect</h3>
             <p class="fragment">Tests can protect us from value loss by validating:</p>
             <ul>
-              <li class="fragment">Previously delivered functionality still functions.</li>
-              <li class="fragment">Previously fixed bugs have not been reintroduced.</li>
+              <li class="fragment">Previously delivered functionality still works.</li>
+              <li class="fragment">Previously fixed bugs are still fixed.</li>
               <li class="fragment">
-                A record of previously delivered functionality and bug fixes is never lost.
+                A record of delivered functionality and bug fixes is never lost.
               </li>
             </ul>
             <aside class="notes">
@@ -171,7 +174,7 @@
               </li>
               <li class="fragment">
                 Going from a functional test and then diving into supporting unit tests reduces
-                wasteful coding.
+                waste.
               </li>
               <li class="fragment">Failing tests can identify what to work on next.</li>
             </ul>
@@ -214,7 +217,7 @@
               <li class="fragment">Capture actual user requirements.</li>
               <li class="fragment">Be clean and readable.</li>
               <li class="fragment">Test the system/solution like a black box.</li>
-              <li class="fragment">Exercise functionality as a user would engage it.</li>
+              <li class="fragment">Exercise functionality as a user would.</li>
             </ul>
             <aside class="notes">
               <p><em>At Start:</em></p>
@@ -240,9 +243,9 @@
             <h3>Integrated</h3>
             <p class="fragment">These tests should:</p>
             <ul style="list-style-type: checks">
-              <li class="fragment">Capture cases supporting a failing functional test.</li>
+              <li class="fragment">Capture scenarios that support a failing functional test.</li>
               <li class="fragment">Be clean and readable.</li>
-              <li class="fragment">Test a component of a solution like a black box.</li>
+              <li class="fragment">Test a component like a black box.</li>
               <li class="fragment">Exercise the component via its public API.</li>
             </ul>
             <aside class="notes">
@@ -268,7 +271,7 @@
             <h3>Unit</h3>
             <p class="fragment">These tests should:</p>
             <ul style="list-style-type: checks">
-              <li class="fragment">Capture cases supporting a failing integration test.</li>
+              <li class="fragment">Capture scenarios that support a failing integration test.</li>
               <li class="fragment">Be clean and readable.</li>
               <li class="fragment">Test a slice of the component like a black box.</li>
               <li class="fragment">Exercise the slice via its public API.</li>
@@ -343,7 +346,7 @@
             <h3>Developers!</h3>
             <p class="fragment">Tests drive the attainment of domain knowledge:</p>
             <ul>
-              <li class="fragment">Functional tests drive problem domain knowledge.</li>
+              <li class="fragment">Functional tests drive exploration of the problem domain.</li>
               <li class="fragment">Integration tests flesh out component roles.</li>
               <li class="fragment">Unit tests drive solution & design knowledge.</li>
             </ul>
@@ -509,11 +512,11 @@
             </aside>
           </section>
           <section>
-            <h3>Close to the Source</h3>
-            <p class="fragment">Keeping them close to the code helps:</p>
+            <h3>Near the Code</h3>
+            <p class="fragment">Keeping them near the code:</p>
             <ul>
-              <li class="fragment">Make them easier for developers to discover.</li>
-              <li class="fragment">Ensure they will be kept up to date.</li>
+              <li class="fragment">Makes them easier for developers to discover.</li>
+              <li class="fragment">Ensures they will be kept up to date.</li>
             </ul>
             <aside class="notes">
               <em>Before:</em> In social psychology, the proximity principle suggests that people

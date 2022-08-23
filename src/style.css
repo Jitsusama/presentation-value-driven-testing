@@ -1,8 +1,8 @@
 @import url("../node_modules/reveal.js/dist/reveal.css");
-@import url("../node_modules/reveal.js/dist/theme/beige.css");
+@import url("../node_modules/reveal.js/dist/theme/night.css");
 
 .slides dl {
-  font-size: medium;
+  font-size: 0.7em;
 }
 
 .slides dt,
@@ -20,6 +20,12 @@
 
 .slides h3 {
   font-size: 3em;
+}
+
+@counter-style questions {
+  system: cyclic;
+  symbols: "🤔" "🕵️‍" "👀" "⌚" "🌎";
+  suffix: " ";
 }
 
 @counter-style checks {
