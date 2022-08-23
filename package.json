@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite src",
     "build": "vite build --outDir ../dist src",
-    "preview": "vite preview src"
+    "format": "prettier --write .",
+    "lint": "prettier --check ."
   },
   "dependencies": {
     "reveal.js": "^4.3.1"
