@@ -44,7 +44,6 @@ Docker's [OCI build tooling](https://docs.docker.com/engine/reference/builder/) 
 bundle this presentation into a runnable website. The build definition can be found in this
 repository's [Dockerfile](./Dockerfile). You can build a new image by running `docker build .`.
 
-[//]: # "TODO - Review Everything"
 [//]: # "TODO - Play with styling "
 [//]: # "TODO - Cut an MR"
 [//]: # "TODO - Get Permission to Open Source"
