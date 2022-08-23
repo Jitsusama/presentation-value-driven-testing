@@ -3,6 +3,26 @@
 This repository contains a presentation meant to be shared across Molex/Koch that hopefully will
 help illustrate the why's of automated software testing.
 
+## Usage
+
+With a built [OCI Docker image](#development), you can run this locally as you would any other OCI
+image on your container runtime of choice.
+
+Here's an example with [Docker Desktop](https://www.docker.com/products/docker-desktop/):
+
+```bash
+docker run --rm --publish-all --detach ${IMAGE_NAME}
+```
+
+You can see what port it is listening on with this command:
+
+```bash
+docker ps --filter id=${CONTAINER_SHA} --format "{{.Ports}}"
+```
+
+You can then make an HTTP connection to the randomly published port to access the presentation in
+your web browser of choice.
+
 ## Development
 
 This slide presentation is developed with the [reveal.js](https://revealjs.com/) slide presentation
@@ -24,7 +44,6 @@ Docker's [OCI build tooling](https://docs.docker.com/engine/reference/builder/) 
 bundle this presentation into a runnable website. The build definition can be found in this
 repository's [Dockerfile](./Dockerfile). You can build a new image by running `docker build .`.
 
-[//]: # "TODO - Add Running Section"
 [//]: # "TODO - Review Everything"
 [//]: # "TODO - Cut an MR"
 [//]: # "TODO - Get Permission to Open Source"

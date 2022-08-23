@@ -16,3 +16,5 @@ FROM nginx AS website
 
 ## install website
 COPY --from=builder /build/dist /usr/share/nginx/html/
+
+EXPOSE 80
