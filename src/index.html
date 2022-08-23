@@ -23,14 +23,11 @@
             <h3>To Answer</h3>
             <ul>
               <li class="fragment"><em>Why</em> should we bother writing tests?</li>
-              <li class="fragment"><em>What</em> type of tests should be written?</li>
-              <li class="fragment"><em>Who</em> should write tests?</li>
+              <li class="fragment"><em>What</em> types of tests should be written?</li>
+              <li class="fragment"><em>Who</em> should write these tests?</li>
               <li class="fragment"><em>When</em> should these tests be developed?</li>
               <li class="fragment"><em>Where</em> should these tests live?</li>
             </ul>
-            <aside class="notes">
-              <p>It should be noted that this talk is focused on automated testing.</p>
-            </aside>
           </section>
         </section>
         <section id="why">
@@ -39,41 +36,38 @@
             <aside class="notes">
               <p>Why should we bother writing (automated) tests?</p>
               <p>
-                Ask this as an open-ended question and try to get a few thoughts from the audience.
+                <em>Poll:</em> Ask this as an open-ended question and try to get a few thoughts from
+                the audience.
               </p>
             </aside>
           </section>
           <section>
             <h3>To Verify</h3>
-            <p class="fragment">A must to ensure we are providing value, yet;</p>
+            <p class="fragment">Verification is needed, yet;</p>
             <ul>
-              <li class="fragment">
-                This often happens haphazardly and is performed inconsistently.
-              </li>
-              <li class="fragment">
-                It is onerous to record the how or what of manual verifications.
-              </li>
-              <li class="fragment">It is difficult to verify whether any shortcuts were taken.</li>
+              <li class="fragment">It often happens haphazardly and inconsistently.</li>
+              <li class="fragment">It is onerous to record the how or what of manual tests.</li>
+              <li class="fragment">It is hard to know if any shortcuts were taken.</li>
             </ul>
             <aside class="notes">
               <p>
-                <em>Before List:</em> Verification is the process of validating that your software
-                does what it is required to do. Without verification, we lack confidence that we are
-                able to deliver what our customer needs.
+                <em>At Start:</em> Verification is the process of validating that your software does
+                what it is required to do. Without this, we lack confidence that we have developed
+                what our customer needs.
               </p>
               <p>
-                <em>After List:</em> When verification is done manually we risk not having the
-                proper verification taking place, or not having it done correctly.
+                <em>At End:</em> When verification is done manually we risk not having the proper
+                verification taking place, or not having it done correctly.
               </p>
-              <p>With automated verification (testing):</p>
+              <p>With automated verifications:</p>
               <ul>
                 <li>
-                  A single test run will consistently perform all tests and can even automatically
-                  trigger them happening on code changes/pushes.
+                  A single test run will consistently run all tests and can be triggered to happen
+                  on code changes/pushes.
                 </li>
                 <li>
-                  The test runner can provide a record of the steps taken & the verifications
-                  performed and identify any failed verifications.
+                  The test runner can provide a record of the steps taken, verifications performed
+                  and identify any failed verifications.
                 </li>
                 <li>The test runner will run verifications the same way every time.</li>
               </ul>
@@ -91,12 +85,12 @@
             </ul>
             <aside class="notes">
               <p>
-                <em>Before List:</em> When software of value has been created, there is always the
+                <em>At Start:</em> When software of value has been created, there is always the
                 potential for that value to be lost as new functionality is added.
               </p>
               <p>
-                <em>After List:</em> You can have automated tests triggered on code pushes, or run
-                them manually at any time to have quick feedback before value loss makes it to a
+                <em>At End:</em> You can have automated tests triggered on code pushes, or run them
+                manually at any time to have quick feedback before value loss makes it to a
                 customer.
               </p>
             </aside>
@@ -111,11 +105,11 @@
             </ul>
             <aside class="notes">
               <p>
-                <em>Before List:</em> Documentation is vital, but often does not track with new
+                <em>At Start:</em> Documentation is vital, but often does not track with new
                 changes.
               </p>
               <p>
-                <em>After List:</em> When your tests serve as documentation, they are guaranteed to
+                <em>At End:</em> When your tests serve as documentation, they are guaranteed to
                 never go out of date!
               </p>
             </aside>
@@ -134,11 +128,11 @@
             </ul>
             <aside class="notes">
               <p>
-                <em>Before List:</em> Designing software is a skill that requires you to step back
-                and think about the problem you're trying to solve, and then to plan out an
-                evolvable structure for software that can provide a solution to that problem.
+                <em>At Start:</em> Designing software is a skill that requires you to step back and
+                think about the problem you're trying to solve, and then to plan out an evolvable
+                structure for software that can provide a solution to that problem.
               </p>
-              <p><em>After List:</em> Some design smells tests can expose:</p>
+              <p><em>At End:</em> Some design smells tests can expose:</p>
               <ul>
                 <li>Too many dependencies implies your code has too many responsibilities.</li>
                 <li>
@@ -169,7 +163,7 @@
               </li>
             </ul>
             <aside class="notes">
-              <p><em>Before List:</em></p>
+              <p><em>At Start:</em></p>
               <p>
                 Working on new functionality can get overwhelming when the functionality is complex.
                 Using tests to guide what you do next can help tame the complexity beast.
@@ -189,9 +183,10 @@
           <section>
             <h2 class="r-fit-text">What?</h2>
             <aside class="notes">
-              <p>What type of tests should be written?</p>
+              <p>What types of tests should be written?</p>
               <p>
-                Ask this as an open-ended question and try to get a few thoughts from the audience.
+                <em>Poll:</em> Ask this as an open-ended question and try to get a few thoughts from
+                the audience.
               </p>
             </aside>
           </section>
@@ -205,12 +200,12 @@
               <li class="fragment">Exercise functionality as a user would engage it.</li>
             </ul>
             <aside class="notes">
-              <p><em>Before List:</em></p>
+              <p><em>At Start:</em></p>
               <p>
                 Functional tests serve as a north star. When a functional (E2E/System/Solution) test
                 passes, it identifies that a user requirement has been met.
               </p>
-              <p><em>After List:</em></p>
+              <p><em>At End:</em></p>
               <p>
                 The quantity of functional tests should ~= just enough to give confidence that the
                 basic user's requirement have been met. Too many functional tests can slow down test
@@ -238,13 +233,13 @@
               </li>
             </ul>
             <aside class="notes">
-              <p><em>Before List:</em></p>
+              <p><em>At Start:</em></p>
               <p>
                 Integrated tests are useful when testing components that make up a part of a
                 solution. When an integrated test passes, it identifies that this component has
                 satisfied a use case that contributes to a functional test.
               </p>
-              <p><em>After List:</em></p>
+              <p><em>At End:</em></p>
               <p>
                 These tests help you focus when tackling an individual component, directing you to
                 only work on a single code path at a time.
@@ -273,13 +268,13 @@
               </li>
             </ul>
             <aside class="notes">
-              <p><em>Before List:</em></p>
+              <p><em>At Start:</em></p>
               <p>
                 Unit tests are often confused with testing a single function/class/method in
                 isolation. While they can be this, historically a unit was meant to reflect any
                 grouping of code that provides value when being programmatically tested.
               </p>
-              <p><em>After List:</em></p>
+              <p><em>At End:</em></p>
               <p>
                 These tests can help you focus on single responsibilities of a component, without
                 having to focus on the entire problem that you are currently trying to solve.
@@ -302,7 +297,8 @@
             <aside class="notes">
               <p>Who should write these tests?</p>
               <p>
-                Ask this as an open-ended question and try to get a few thoughts from the audience.
+                <em>Poll:</em> Ask this as an open-ended question and try to get a few thoughts from
+                the audience.
               </p>
             </aside>
           </section>
@@ -346,12 +342,12 @@
             </ul>
             <aside class="notes">
               <p>
-                <em>Before List:</em> Developers write the solution and must acquire the problem
-                domain knowledge necessary to solve it. Writing automated tests helps identify
-                knowledge gaps before trying to implement it. It's not a waste of your time, instead
-                it is a vital use of it!
+                <em>At Start:</em> Developers write the solution and must acquire the problem domain
+                knowledge necessary to solve it. Writing automated tests helps identify knowledge
+                gaps before trying to implement it. It's not a waste of your time, instead it is a
+                vital use of it!
               </p>
-              <p><em>After List:</em> Reach out for help!</p>
+              <p><em>At End:</em> Reach out for help!</p>
               <ul>
                 <li>
                   QA is trained to find edge cases. They are great at giving ideas about how you can
@@ -382,7 +378,8 @@
             <aside class="notes">
               <p>When should these tests be developed?</p>
               <p>
-                Ask this as an open-ended question and try to get a few thoughts from the audience.
+                <em>Poll:</em> Ask this as an open-ended question and try to get a few thoughts from
+                the audience.
               </p>
             </aside>
           </section>
