@@ -379,6 +379,7 @@
             what's in the bottle. That's a problem that testing addresses.</q
           >
           <p style="font-size: 0.5em">&mdash; Michael Bolton</p>
+          <aside class="notes"><em>Questions?</em></aside>
         </section>
         <section id="when">
           <section>
@@ -401,16 +402,16 @@
               <li class="fragment">Often doesn't happen.</li>
             </ul>
             <aside class="notes">
-              <p>When you write tests after the production code is written:</p>
+              <p><em>At End:</em></p>
               <ul>
                 <li>Because you don't have to think first, you can start writing code sooner.</li>
                 <li>
-                  But the finished code takes longer as you were not forced to think through the
-                  problem before trying to solve it.
+                  But the finished code takes longer to produce as you were not forced to think
+                  through the problem before trying to solve it.
                 </li>
                 <li>
                   Since you don't get test feedback on your design early on, its often too late to
-                  act on what it tells you as too much time has been sunk into it.
+                  act on what it tells you as too much time has already been sunk into what exists.
                 </li>
                 <li>
                   Since the code wasn't written with tests in mind, the tests are harder to write
@@ -433,7 +434,7 @@
               <li class="fragment">You have the time to write them.</li>
             </ul>
             <aside class="notes">
-              <p>When you write tests before the production code is written:</p>
+              <p><em>During:</em></p>
               <ul>
                 <li>
                   By being forced to think through the problem in order to write a test for it,
@@ -448,43 +449,44 @@
                   and cheap to act on any feedback you get.
                 </li>
                 <li>
-                  With the problem new and fresh on your mind, and without having production code
-                  already written to constrain setting it up in the test, tests are quicker to
-                  write.
+                  With the problem fresh in your mind, and without having production code already
+                  written to constrain setting it up in the test, tests are quicker to write.
                 </li>
                 <li>
                   With the tests happening first, and having the constraint that the solution cannot
                   be shipped without the code being written, you should always be able to have the
-                  tests written.
+                  time to write the tests.
                 </li>
               </ul>
             </aside>
           </section>
           <section>
             <h3>Mixture</h3>
-            <p>Reality is rarely so simple. For brownfield code:</p>
+            <p class="fragment">For brownfield code you can:</p>
             <ol>
               <li class="fragment">Selectively write tests around existing code.</li>
               <li class="fragment">Safely improve the existing design.</li>
               <li class="fragment">Write tests for what is new.</li>
             </ol>
             <aside class="notes">
+              <p><em>At Start:</em></p>
               <p>
-                On a brownfield system you will often have a lot of untested code. There are
-                strategies you can use to safely introduce changes:
+                Reality is rarely so simple. On a brownfield system you will often have a lot of
+                untested code.
               </p>
+              <p><em>During:</em></p>
               <ul>
                 <li>
                   Identify the area of the solution that will have to be touched to introduce
                   changes and write tests around its existing functionality.
                 </li>
                 <li>
-                  With the protection of tests around the existing code, redesign it to improve its
-                  quality.
+                  With the protection of tests around the existing code, redesign the tested code to
+                  improve its quality so its easier to extend.
                 </li>
                 <li>
-                  Write new functional/integration/unit tests for the new functionality that is to
-                  be introduced.
+                  Write functional/integration/unit tests for the new functionality that is to be
+                  introduced.
                 </li>
               </ul>
             </aside>
@@ -493,6 +495,7 @@
         <section class="quote">
           <q>Write tests until fear is transformed into boredom</q>
           <p style="font-size: 0.5em">&mdash; Kent Beck</p>
+          <aside class="notes"><em>Questions?</em></aside>
         </section>
         <section id="where">
           <section>
@@ -521,6 +524,7 @@
         <section class="quote">
           <q>I think when you hear the phrase "it's just test code". To me that's a code smell.</q>
           <p style="font-size: 0.5em">&mdash; Alan Page</p>
+          <aside class="notes"><em>Questions?</em></aside>
         </section>
       </div>
     </div>
