@@ -22,22 +22,20 @@
   font-size: 3em;
 }
 
-@counter-style when-after-emojis {
+@counter-style checks {
+  system: cyclic;
+  symbols: "✅";
+  suffix: " ";
+}
+
+@counter-style happy-to-sad {
   system: cyclic;
   symbols: "😊" "😞" "😥" "😰" "😭";
   suffix: " ";
 }
 
-#when-after-list {
-  list-style-type: when-after-emojis;
-}
-
-@counter-style when-before-emojis {
+@counter-style sad-to-happy {
   system: cyclic;
   symbols: "😥" "😊" "🧐" "🤓" "😎";
   suffix: " ";
-}
-
-#when-before-list {
-  list-style-type: when-before-emojis;
 }

@@ -35,7 +35,7 @@
             </aside>
           </section>
         </section>
-        <section>
+        <section class="quote">
           <q
             >I am pretty sure there is a difference between 'this has not been proven' and 'this is
             false.'</q
@@ -188,12 +188,13 @@
             </aside>
           </section>
         </section>
-        <section>
+        <section class="quote">
           <q
             >No amount of testing can prove a software right, a single test can prove a software
             wrong.</q
           >
           <p style="font-size: 0.5em">&mdash; Amir Ghahrai</p>
+          <aside class="notes"><em>Questions?</em></aside>
         </section>
         <section id="what">
           <section>
@@ -208,8 +209,8 @@
           </section>
           <section>
             <h3>Functional</h3>
-            <p class="fragment">These types of tests should:</p>
-            <ul>
+            <p class="fragment">These tests should:</p>
+            <ul style="list-style-type: checks">
               <li class="fragment">Capture actual user requirements.</li>
               <li class="fragment">Be clean and readable.</li>
               <li class="fragment">Test the system/solution like a black box.</li>
@@ -237,16 +238,12 @@
           </section>
           <section>
             <h3>Integrated</h3>
-            <p class="fragment">These types of tests should:</p>
-            <ul>
-              <li class="fragment">
-                Capture happy paths and edge cases supporting a failing functional test.
-              </li>
+            <p class="fragment">These tests should:</p>
+            <ul style="list-style-type: checks">
+              <li class="fragment">Capture cases supporting a failing functional test.</li>
               <li class="fragment">Be clean and readable.</li>
               <li class="fragment">Test a component of a solution like a black box.</li>
-              <li class="fragment">
-                Exercise the component like a client of the component under test would engage it.
-              </li>
+              <li class="fragment">Exercise the component via its public API.</li>
             </ul>
             <aside class="notes">
               <p><em>At Start:</em></p>
@@ -269,19 +266,12 @@
           </section>
           <section>
             <h3>Unit</h3>
-            <p class="fragment">These types of test should:</p>
-            <ul>
-              <li class="fragment">
-                Capture happy paths and edge cases supporting a failing integration test.
-              </li>
+            <p class="fragment">These tests should:</p>
+            <ul style="list-style-type: checks">
+              <li class="fragment">Capture cases supporting a failing integration test.</li>
               <li class="fragment">Be clean and readable.</li>
-              <li class="fragment">
-                Test a single responsibility of a component like a black box.
-              </li>
-              <li class="fragment">
-                Exercise the responsibility's public API like a client of this API under test would
-                engage it.
-              </li>
+              <li class="fragment">Test a slice of the component like a black box.</li>
+              <li class="fragment">Exercise the slice via its public API.</li>
             </ul>
             <aside class="notes">
               <p><em>At Start:</em></p>
@@ -292,8 +282,8 @@
               </p>
               <p><em>At End:</em></p>
               <p>
-                These tests can help you focus on single responsibilities of a component, without
-                having to focus on the entire problem that you are currently trying to solve.
+                These tests can help you focus on a single responsibility of a component without
+                having to focus on the entire problem that this component is trying to solve.
               </p>
               <p>
                 These tests are quite valuable as living documentation, showing the design of a
@@ -303,9 +293,10 @@
             </aside>
           </section>
         </section>
-        <section>
+        <section class="quote">
           <q>All code is guilty until proven innocent.</q>
           <p style="font-size: 0.5em">&mdash; Anonymous</p>
+          <aside class="notes"><em>Questions?</em></aside>
         </section>
         <section id="who">
           <section>
@@ -381,7 +372,7 @@
             </aside>
           </section>
         </section>
-        <section>
+        <section class="quote">
           <q
             >The problem is not that testing is the bottleneck. The problem is that you don’t know
             what's in the bottle. That's a problem that testing addresses.</q
@@ -401,7 +392,7 @@
           </section>
           <section>
             <h3>After</h3>
-            <ul id="when-after-list">
+            <ul style="list-style-type: happy-to-sad">
               <li class="fragment">You start writing production code quicker.</li>
               <li class="fragment">It takes longer to finish the production code.</li>
               <li class="fragment">You get late feedback on your design.</li>
@@ -433,7 +424,7 @@
           </section>
           <section>
             <h3>Before</h3>
-            <ul id="when-before-list">
+            <ul style="list-style-type: sad-to-happy">
               <li class="fragment">You start writing production code later.</li>
               <li class="fragment">It takes less time to finish the production code.</li>
               <li class="fragment">You get early feedback on your design.</li>
@@ -498,7 +489,7 @@
             </aside>
           </section>
         </section>
-        <section>
+        <section class="quote">
           <q>Write tests until fear is transformed into boredom</q>
           <p style="font-size: 0.5em">&mdash; Kent Beck</p>
         </section>
@@ -526,7 +517,7 @@
             </aside>
           </section>
         </section>
-        <section>
+        <section class="quote">
           <q>I think when you hear the phrase "it's just test code". To me that's a code smell.</q>
           <p style="font-size: 0.5em">&mdash; Alan Page</p>
         </section>
