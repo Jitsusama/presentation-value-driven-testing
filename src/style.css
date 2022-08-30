@@ -22,13 +22,43 @@
   font-size: 3em;
 }
 
-@counter-style questions {
+@counter-style goal {
   system: cyclic;
   symbols: "🤔" "🕵️‍" "👀" "⌚" "🌎";
   suffix: " ";
 }
 
-@counter-style checks {
+@counter-style verify {
+  system: cyclic;
+  symbols: "😞" "😥" "😰";
+  suffix: " ";
+}
+
+@counter-style protect {
+  system: cyclic;
+  symbols: "🚀" "🐛" "📃";
+  suffix: " ";
+}
+
+@counter-style document {
+  system: cyclic;
+  symbols: "✍" "📐" "📖";
+  suffix: " ";
+}
+
+@counter-style design {
+  system: cyclic;
+  symbols: "👃" "⌚" "👩‍💻";
+  suffix: " ";
+}
+
+@counter-style focus {
+  system: cyclic;
+  symbols: "🤔" "🍰" "🪒" "📅";
+  suffix: " ";
+}
+
+@counter-style what {
   system: cyclic;
   symbols: "✅";
   suffix: " ";
@@ -43,6 +73,18 @@
 @counter-style sad-to-happy {
   system: cyclic;
   symbols: "😥" "😊" "🧐" "🤓" "😎";
+  suffix: " ";
+}
+
+@counter-style who {
+  system: cyclic;
+  symbols: "👩‍💻" "👨‍💻";
+  suffix: " ";
+}
+
+@counter-style where {
+  system: cyclic;
+  symbols: "👩‍💻" "📆";
   suffix: " ";
 }
 

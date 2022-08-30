@@ -22,7 +22,7 @@
           <section><h2 class="r-fit-text">Goal</h2></section>
           <section>
             <h3>To Answer</h3>
-            <ul style="list-style-type: questions">
+            <ul style="list-style-type: goal">
               <li class="fragment"><em>Why</em> should we bother writing tests?</li>
               <li class="fragment"><em>What</em> types of tests should be written?</li>
               <li class="fragment"><em>Who</em> should write these tests?</li>
@@ -57,11 +57,9 @@
           <section>
             <h3>To Verify</h3>
             <p class="fragment">Verification is needed, yet;</p>
-            <ul>
+            <ul style="list-style-type: verify">
+              <li class="fragment">It is time-consuming to record test run details.</li>
               <li class="fragment">It often happens haphazardly or inconsistently.</li>
-              <li class="fragment">
-                It is time-consuming to record the how or what of manual test runs.
-              </li>
               <li class="fragment">It is hard to know if any shortcuts were taken.</li>
             </ul>
             <aside class="notes">
@@ -91,7 +89,7 @@
           <section>
             <h3>To Protect</h3>
             <p class="fragment">Tests can protect us from value loss by validating:</p>
-            <ul>
+            <ul style="list-style-type: protect">
               <li class="fragment">Previously delivered functionality still works.</li>
               <li class="fragment">Previously fixed bugs are still fixed.</li>
               <li class="fragment">
@@ -112,7 +110,7 @@
           <section>
             <h3>To Document</h3>
             <p class="fragment">Tests are living documentation:</p>
-            <ul style="display: block">
+            <ul style="list-style-type: document">
               <li class="fragment">Functional tests document use cases.</li>
               <li class="fragment">Unit tests document design.</li>
               <li class="fragment">
@@ -133,7 +131,7 @@
           <section>
             <h3>To Design</h3>
             <p class="fragment">Tests can provide timely feedback on your design:</p>
-            <ul>
+            <ul style="list-style-type: design">
               <li class="fragment">Hard to write tests often indicate bad designs.</li>
               <li class="fragment">
                 Can give feedback about your design before you've sunk too much time into it.
@@ -164,7 +162,7 @@
           <section>
             <h3>To Focus</h3>
             <p class="fragment">How tests can guide you to more focused work:</p>
-            <ul>
+            <ul style="list-style-type: focus">
               <li class="fragment">
                 Functional tests force you to think about the problem before solving it.
               </li>
@@ -213,7 +211,7 @@
           <section>
             <h3>Functional</h3>
             <p class="fragment">These tests should:</p>
-            <ul style="list-style-type: checks">
+            <ul style="list-style-type: what">
               <li class="fragment">Capture actual user requirements.</li>
               <li class="fragment">Be clean and readable.</li>
               <li class="fragment">Test the system/solution like a black box.</li>
@@ -242,7 +240,7 @@
           <section>
             <h3>Integrated</h3>
             <p class="fragment">These tests should:</p>
-            <ul style="list-style-type: checks">
+            <ul style="list-style-type: what">
               <li class="fragment">Capture scenarios that support a failing functional test.</li>
               <li class="fragment">Be clean and readable.</li>
               <li class="fragment">Test a component like a black box.</li>
@@ -270,7 +268,7 @@
           <section>
             <h3>Unit</h3>
             <p class="fragment">These tests should:</p>
-            <ul style="list-style-type: checks">
+            <ul style="list-style-type: what">
               <li class="fragment">Capture scenarios that support a failing integration test.</li>
               <li class="fragment">Be clean and readable.</li>
               <li class="fragment">Test a slice of the component like a black box.</li>
@@ -345,7 +343,7 @@
           <section>
             <h3>Developers!</h3>
             <p class="fragment">Tests drive the attainment of domain knowledge:</p>
-            <ul>
+            <ul style="list-style-type: who">
               <li class="fragment">Functional tests drive problem exploration.</li>
               <li class="fragment">Integration tests flesh out component roles.</li>
               <li class="fragment">Unit tests drive solution & design knowledge.</li>
@@ -514,7 +512,7 @@
           <section>
             <h3>Near the Code</h3>
             <p class="fragment">Keeping them near the code:</p>
-            <ul>
+            <ul style="list-style-type: where">
               <li class="fragment">Makes them easier for developers to discover.</li>
               <li class="fragment">Ensures they will be kept up to date.</li>
             </ul>
