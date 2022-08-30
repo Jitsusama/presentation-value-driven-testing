@@ -45,3 +45,9 @@
   symbols: "😥" "😊" "🧐" "🤓" "😎";
   suffix: " ";
 }
+
+@counter-style review {
+  system: cyclic;
+  symbols: "🎉" "🎊" "✨" "🎆" "🎇";
+  suffix: " ";
+}
