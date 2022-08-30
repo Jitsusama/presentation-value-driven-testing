@@ -1,0 +1,29 @@
+stages:
+  - quality
+  - build
+
+quality-website:
+  stage: quality
+  tags:
+    - linux
+  image: node:18-alpine
+  script:
+    - npm install
+    - npm run lint
+
+build-website:
+  stage: build
+  tags:
+    - linux
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  script:
+    - auth=$(echo -n "${CI_REGISTRY_USER}:${CI_REGISTRY_PASSWORD}" | base64)
+    - mkdir -p ~/.docker
+    - echo "{\"auths\":{\"${CI_REGISTRY}\":{\"auth\":\"${auth}\"}}}" > ~/.docker/config.json
+    - >-
+      /kaniko/executor
+      --context "${CI_PROJECT_DIR}"
+      --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
+      --destination "${CI_REGISTRY_IMAGE}:${CI_COMMIT_SHORT_SHA}"

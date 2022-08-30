@@ -1,0 +1,95 @@
+@import url("../node_modules/reveal.js/dist/reveal.css");
+@import url("../node_modules/reveal.js/dist/theme/night.css");
+
+.slides dl {
+  font-size: 0.7em;
+}
+
+.slides dt,
+.slides dd {
+  display: inline;
+}
+
+.slides dt::after {
+  content: ":";
+}
+
+.slides dd {
+  margin-left: 0.5em;
+}
+
+.slides h3 {
+  font-size: 3em;
+}
+
+@counter-style goal {
+  system: cyclic;
+  symbols: "🤔" "🕵️‍" "👀" "⌚" "🌎";
+  suffix: " ";
+}
+
+@counter-style verify {
+  system: cyclic;
+  symbols: "😞" "😥" "😰";
+  suffix: " ";
+}
+
+@counter-style protect {
+  system: cyclic;
+  symbols: "🚀" "🐛" "📃";
+  suffix: " ";
+}
+
+@counter-style document {
+  system: cyclic;
+  symbols: "✍" "📐" "📖";
+  suffix: " ";
+}
+
+@counter-style design {
+  system: cyclic;
+  symbols: "👃" "⌚" "👩‍💻";
+  suffix: " ";
+}
+
+@counter-style focus {
+  system: cyclic;
+  symbols: "🤔" "🍰" "🪒" "📅";
+  suffix: " ";
+}
+
+@counter-style what {
+  system: cyclic;
+  symbols: "✅";
+  suffix: " ";
+}
+
+@counter-style happy-to-sad {
+  system: cyclic;
+  symbols: "😊" "😞" "😥" "😰" "😭";
+  suffix: " ";
+}
+
+@counter-style sad-to-happy {
+  system: cyclic;
+  symbols: "😥" "😊" "🧐" "🤓" "😎";
+  suffix: " ";
+}
+
+@counter-style who {
+  system: cyclic;
+  symbols: "👩‍💻" "👨‍💻";
+  suffix: " ";
+}
+
+@counter-style where {
+  system: cyclic;
+  symbols: "👩‍💻" "📆";
+  suffix: " ";
+}
+
+@counter-style review {
+  system: cyclic;
+  symbols: "🎉" "🎊" "✨" "🎆" "🎇";
+  suffix: " ";
+}

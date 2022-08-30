@@ -1,0 +1,19 @@
+{
+  "name": "value-driven-testing",
+  "private": true,
+  "version": "1.0.0-a1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite src",
+    "build": "vite build --outDir ../dist src",
+    "format": "prettier --write .",
+    "lint": "prettier --check ."
+  },
+  "dependencies": {
+    "reveal.js": "^4.3.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "vite": "^3.0.0"
+  }
+}
