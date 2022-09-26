@@ -1,484 +1,540 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="style.css"/>
-  <title>Value Driven Testing</title>
-</head>
-<body>
-<div class="reveal">
-  <div class="slides">
-    <section id="title">
-      <h1 class="r-fit-text">Value Driven Testing</h1>
-      <h2 class="r-fit-text">How automated testing can provide value to software projects</h2>
-      <p style="font-size: 0.5em">
-        Presented by Joel Gerber (<a href="mailto:joel.gerber@molex.com">joel.gerber@molex.com</a>)
-      </p>
-    </section>
-    <section id="overview">
-      <section><h2 class="r-fit-text">Goal</h2></section>
-      <section>
-        <h3>To Answer</h3>
-        <ul style="list-style-type: goal">
-          <li class="fragment"><em>Why</em> should we bother writing tests?</li>
-          <li class="fragment"><em>What</em> types of tests should be written?</li>
-          <li class="fragment"><em>Who</em> should write these tests?</li>
-          <li class="fragment"><em>When</em> should these tests be developed?</li>
-        </ul>
-        <aside class="notes">
-          <p>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Value Driven Testing</title>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section id="title">
+          <h1 class="r-fit-text">Value Driven Testing</h1>
+          <h2 class="r-fit-text">How automated testing can provide value to software projects</h2>
+          <p style="font-size: 0.5em">
+            Presented by Joel Gerber (<a href="mailto:joel.gerber@molex.com"
+              >joel.gerber@molex.com</a
+            >)
           </p>
-          <p>
-            <em>At End:</em> The other unwritten goal is to share some pithy testing quotes.
-          </p>
-        </aside>
-      </section>
-    </section>
-    <section class="quote">
-      <q>I am pretty sure there is a difference between 'this has not been proven' and 'this is
-        false.'</q>
-      <p style="font-size: 0.5em">&mdash; Ron Jeffries</p>
-    </section>
-    <section id="why">
-      <section>
-        <h2 class="r-fit-text">Why?</h2>
-        <aside class="notes">
-          <p>Why should we bother writing (automated) tests?</p>
-          <p>
-            <em>Poll:</em> Ask this as an open-ended question and try to get a few thoughts from
-            the audience.
-          </p>
-        </aside>
-      </section>
-      <section>
-        <h3>To Verify</h3>
-        <p class="fragment">Verification is needed, yet;</p>
-        <ul style="list-style-type: verify">
-          <li class="fragment">It is time-consuming to record test run details.</li>
-          <li class="fragment">It often happens haphazardly or inconsistently.</li>
-          <li class="fragment">It is hard to know if any shortcuts were taken.</li>
-        </ul>
-        <aside class="notes">
-          <p><em>At Start:</em> Verification is the process of validating that your software does
-            what it is required to do. Without this, we lack confidence that we have developed what
-            our customer needs.</p>
-          <p><em>At End:</em> When verification is done manually we risk not having the proper
-            verification taking place, or not having it done correctly.</p>
-          <p>With automated verifications:</p>
-          <ul>
-            <li>
-              A single test run will consistently run all tests and can be triggered to happen
-              on code changes/pushes.
-            </li>
-            <li>
-              The test runner can automatically provide a record of the steps taken,
-              verifications performed and identify any failed verifications.
-            </li>
-            <li>The test runner will run verifications the same way every time.</li>
-          </ul>
-        </aside>
-      </section>
-      <section>
-        <h3>To Protect</h3>
-        <p class="fragment">Tests can protect us from value loss by validating:</p>
-        <ul style="list-style-type: protect">
-          <li class="fragment">Previously delivered functionality still works.</li>
-          <li class="fragment">Previously fixed bugs are still fixed.</li>
-          <li class="fragment">
-            A record of delivered functionality and bug fixes is never lost.
-          </li>
-        </ul>
-        <aside class="notes">
-          <p><em>At Start:</em> When software of value has been created, there is always the
-            potential for that value to be lost as new functionality is added.</p>
-          <p><em>At End:</em> With automated tests you are able to get a quick indication of value
-            loss before it makes it to the customer.</p>
-        </aside>
-      </section>
-      <section>
-        <h3>To Document</h3>
-        <p class="fragment">Tests are living documentation:</p>
-        <ul style="list-style-type: document">
-          <li class="fragment">Functional tests document use cases.</li>
-          <li class="fragment">Unit tests document design.</li>
-          <li class="fragment">
-            Both function as living examples of how to interface with your APIs.
-          </li>
-        </ul>
-        <aside class="notes">
-          <p><em>At Start:</em> Documentation is vital, but often does not track with new changes.
-          </p>
-          <p><em>At End:</em> When your tests serve as documentation, they are guaranteed to never
-            go out of date!</p>
-        </aside>
-      </section>
-      <section>
-        <h3>To Design</h3>
-        <p class="fragment">Tests can provide timely feedback on your design:</p>
-        <ul style="list-style-type: design">
-          <li class="fragment">Hard to write tests often indicate bad designs.</li>
-          <li class="fragment">
-            Can give feedback about your design before you've sunk too much time into it.
-          </li>
-          <li class="fragment">
-            Help document your design and clearly identify its dependencies and data types.
-          </li>
-        </ul>
-        <aside class="notes">
-          <p><em>At Start:</em> Software design is a skill that requires you to step back and think
-            about the problem you're trying to solve and then plan out an evolvable structure that a
-            solution can be built on.</p>
-          <p><em>At End:</em> Some example design feedbacks (smells) tests can expose:</p>
-          <ul>
-            <li>Too many dependencies implies your code has too many responsibilities.</li>
-            <li>
-              Too many tests for a particular API implies that it is probably doing too much.
-            </li>
-            <li>
-              If engaging your API feels weird, it might mean a name change is in order, or that
-              some parameters should be extracted into their own type.
-            </li>
-          </ul>
-        </aside>
-      </section>
-      <section>
-        <h3>To Focus</h3>
-        <p class="fragment">How tests can guide you to more focused work:</p>
-        <ul style="list-style-type: focus">
-          <li class="fragment">
-            Functional tests force you to think about the problem before solving it.
-          </li>
-          <li class="fragment">
-            Unit tests help break down the problem into smaller parts that can be tackled one at
-            a time.
-          </li>
-          <li class="fragment">
-            Going from a functional test and then diving into supporting unit tests reduces
-            waste.
-          </li>
-          <li class="fragment">Failing tests can identify what to work on next.</li>
-        </ul>
-        <aside class="notes">
-          <p><em>At Start:</em></p>
-          <p>Working on new functionality can get overwhelming when the functionality is complex.
-            Using tests to guide what you do next can help tame the complexity beast.</p>
-          <p>This helps to focus work on what is needed to meet current needs instead of future
-            uncertainties.</p>
-        </aside>
-      </section>
-    </section>
-    <section class="quote">
-      <q>No amount of testing can prove a software right, a single test can prove a software
-        wrong.</q>
-      <p style="font-size: 0.5em">&mdash; Amir Ghahrai</p>
-      <aside class="notes"><em>Questions?</em></aside>
-    </section>
-    <section id="what">
-      <section>
-        <h2 class="r-fit-text">What?</h2>
-        <aside class="notes">
-          <p>What types of tests should be written?</p>
-          <p><em>Poll:</em> Ask this as an open-ended question and try to get a few thoughts from
-            the audience.</p>
-        </aside>
-      </section>
-      <section>
-        <h3>Functional</h3>
-        <p class="fragment">These tests should:</p>
-        <ul style="list-style-type: what">
-          <li class="fragment">Capture actual user requirements.</li>
-          <li class="fragment">Be clean and readable.</li>
-          <li class="fragment">Test the system/solution like a black box.</li>
-          <li class="fragment">Exercise functionality as a user would.</li>
-        </ul>
-        <aside class="notes">
-          <p><em>At Start:</em></p>
-          <p>Functional tests serve as a north star. When a functional (E2E/System/Solution) test
-            passes, it identifies that a user requirement has been met.</p>
-          <p><em>At End:</em></p>
-          <p>The quantity of functional tests should ~= just enough to give confidence that the
-            basic user's requirement have been met. Too many functional tests can slow down test
-            runs, thereby slowing down the feedback cycle. Edge cases can be tackled in integrated
-            or unit tests.</p>
-          <p>These tests are quite valuable as living documentation, showing what functionality the
-            solutions supports, and being executable you can always be confident that the delivered
-            value is never lost.</p>
-        </aside>
-      </section>
-      <section>
-        <h3>Integrated</h3>
-        <p class="fragment">These tests should:</p>
-        <ul style="list-style-type: what">
-          <li class="fragment">Capture scenarios that support a failing functional test.</li>
-          <li class="fragment">Be clean and readable.</li>
-          <li class="fragment">Test a component like a black box.</li>
-          <li class="fragment">Exercise the component via its public API.</li>
-        </ul>
-        <aside class="notes">
-          <p><em>At Start:</em></p>
-          <p>Integrated tests are useful when testing components that make up a part of a solution.
-            When an integrated test passes, it identifies that this component has satisfied a use
-            case that contributes to a functional test.</p>
-          <p><em>At End:</em></p>
-          <p>These tests help you focus when tackling an individual component, directing you to only
-            work on a single code path at a time.</p>
-          <p>These tests are quite valuable as living documentation, showing what use cases this
-            component is meant to serve, and being executable you can always be confident that the
-            delivered value is never lost during future changes.</p>
-        </aside>
-      </section>
-      <section>
-        <h3>Unit</h3>
-        <p class="fragment">These tests should:</p>
-        <ul style="list-style-type: what">
-          <li class="fragment">Capture scenarios that support a failing integration test.</li>
-          <li class="fragment">Be clean and readable.</li>
-          <li class="fragment">Test a slice of the component like a black box.</li>
-          <li class="fragment">Exercise the slice via its public API.</li>
-        </ul>
-        <aside class="notes">
-          <p><em>At Start:</em></p>
-          <p>Unit tests are often confused with testing a single function/class/method in isolation.
-            While they can be this, historically a unit was meant to reflect any grouping of code
-            that provides value when being programmatically tested.</p>
-          <p><em>At End:</em></p>
-          <p>These tests can help you focus on a single responsibility of a component without having
-            to focus on the entire problem that this component is trying to solve.</p>
-          <p>These tests are quite valuable as living documentation, showing the design of a single
-            component responsibility, and how the API of that responsibility can be engaged.</p>
-        </aside>
-      </section>
-    </section>
-    <section class="quote">
-      <q>All code is guilty until proven innocent.</q>
-      <p style="font-size: 0.5em">&mdash; Anonymous</p>
-      <aside class="notes"><em>Questions?</em></aside>
-    </section>
-    <section id="who">
-      <section>
-        <h2 class="r-fit-text">Who?</h2>
-        <aside class="notes">
-          <p>Who should write these tests?</p>
-          <p><em>Poll:</em> Ask this as an open-ended question and try to get a few thoughts from
-            the audience.</p>
-        </aside>
-      </section>
-      <section>
-        <video
-          title="Steve Balmer - Developers! Developers! Developers!"
-          height="340"
-          width="420"
-          muted
-          playsinline
-          autoplay
-          loop
-          preload="auto"
-          poster="https://thumbs.gfycat.com/ConfusedGracefulArgentinehornedfrog-mobile.jpg"
-        >
-          <source
-            src="https://zippy.gfycat.com/ConfusedGracefulArgentinehornedfrog.mp4"
-            type="video/mp4"
-          />
-        </video>
-        <p style="font-size: small"><a
-          href="https://gfycat.com/confusedgracefulargentinehornedfrog-steve-ballmer-developers">via
-          Gfycat</a></p>
-        <aside class="notes">
-          <p>
-            Steve Balmer in the memeified Microsoft developer's conference screaming:
-            "Developers! Developers! Developers!"
-          </p>
-        </aside>
-      </section>
-      <section>
-        <h3>Developers!</h3>
-        <p class="fragment">Tests drive the attainment of domain knowledge:</p>
-        <ul style="list-style-type: who">
-          <li class="fragment">Functional tests drive problem exploration.</li>
-          <li class="fragment">Integration tests flesh out component roles.</li>
-          <li class="fragment">Unit tests drive solution &amp; design knowledge.</li>
-        </ul>
-        <aside class="notes">
-          <p><em>At Start:</em> Developers write the solution and must acquire the problem domain
-            knowledge necessary to provide the solution. Writing automated tests helps identify
-            knowledge gaps before trying to implement a solution. This is not a waste of your time,
-            instead it is a vital use of it! Who better than the ones who most need to have this
-            domain knowledge to write the tests?</p>
-          <p><em>At End:</em> Reach out for help!</p>
-          <ul>
-            <li>
-              QA is trained to find edge cases. They are great at giving ideas about how you can
-              test from every angle.
-            </li>
-            <li>
-              Business analysts, product owners &amp; the customer together can provide valuable
-              context about the problem which helps identify what should be tested.
-            </li>
-            <li>
-              SMEs in testing/technologies/the problem domain can help figure out how to set up
-              a test environment and how to engage complicated systems as part of your tests.
-            </li>
-          </ul>
-        </aside>
-      </section>
-    </section>
-    <section class="quote">
-      <q>The problem is not that testing is the bottleneck. The problem is that you don’t know
-        what's in the bottle. That's a problem that testing addresses.</q>
-      <p style="font-size: 0.5em">&mdash; Michael Bolton</p>
-      <aside class="notes"><em>Questions?</em></aside>
-    </section>
-    <section id="when">
-      <section>
-        <h2 class="r-fit-text">When?</h2>
-        <aside class="notes">
-          <p>When should these tests be developed?</p>
-          <p><em>Poll:</em> Ask this as an open-ended question and try to get a few thoughts from
-            the audience.</p>
-        </aside>
-      </section>
-      <section>
-        <h3>After</h3>
-        <ul style="list-style-type: happy-to-sad">
-          <li class="fragment">You start writing production code quicker.</li>
-          <li class="fragment">It takes longer to finish the production code.</li>
-          <li class="fragment">You get late feedback on your design.</li>
-          <li class="fragment">The tests are harder to write.</li>
-          <li class="fragment">Often doesn't happen.</li>
-        </ul>
-        <aside class="notes">
-          <p><em>At End:</em></p>
-          <ul>
-            <li>Because you don't have to think first, you can start writing code sooner.</li>
-            <li>
-              But the finished code takes longer to produce as you were not forced to think
-              through the problem before trying to solve it.
-            </li>
-            <li>
-              Since you don't get test feedback on your design early on, its often too late to
-              act on what it tells you as too much time has already been sunk into what exists.
-            </li>
-            <li>
-              Since the code wasn't written with tests in mind, the tests are harder to write
-              and often require redesigns of your production code.
-            </li>
-            <li>
-              At the end of a development cycle, time crunches are real which cause left over
-              things to be dropped, such as tests.
-            </li>
-          </ul>
-        </aside>
-      </section>
-      <section>
-        <h3>Before</h3>
-        <ul style="list-style-type: sad-to-happy">
-          <li class="fragment">You start writing production code later.</li>
-          <li class="fragment">It takes less time to finish the production code.</li>
-          <li class="fragment">You get early feedback on your design.</li>
-          <li class="fragment">The tests are easier to write.</li>
-          <li class="fragment">You have the time to write them.</li>
-        </ul>
-        <aside class="notes">
-          <p><em>During:</em></p>
-          <ul>
-            <li>
-              By being forced to think through the problem in order to write a test for it,
-              starting to write the solution gets delayed.
-            </li>
-            <li>
-              Since the problem has already been thought through, it takes less time to write
-              the final solution.
-            </li>
-            <li>
-              You can get feedback on the design before you implement it, so its really quick
-              and cheap to act on any feedback you get.
-            </li>
-            <li>
-              With the problem fresh in your mind, and without having production code already
-              written to constrain setting it up in the test, tests are quicker to write.
-            </li>
-            <li>
-              With the tests happening first, and having the constraint that the solution cannot
-              be shipped without the code being written, you should always be able to have the
-              time to write the tests.
-            </li>
-          </ul>
-        </aside>
-      </section>
-      <section>
-        <h3>Mixture</h3>
-        <p class="fragment">For brownfield code you can:</p>
-        <ol>
-          <li class="fragment">Selectively write tests around existing code.</li>
-          <li class="fragment">Safely improve the existing design.</li>
-          <li class="fragment">Write tests for what is new.</li>
-        </ol>
-        <aside class="notes">
-          <p><em>At Start:</em></p>
-          <p>Reality is rarely so simple. On a brownfield system you will often have a lot of
-            untested code.</p>
-          <p><em>During:</em></p>
-          <ul>
-            <li>
-              Identify the area of the solution that will have to be touched to introduce
-              changes and write tests around its existing functionality.
-            </li>
-            <li>
-              With the protection of tests around the existing code, redesign the tested code to
-              improve its quality, so it's easier to extend.
-            </li>
-            <li>
-              Write functional/integration/unit tests for the new functionality that is to be
-              introduced.
-            </li>
-          </ul>
-        </aside>
-      </section>
-    </section>
-    <section class="quote">
-      <q>Write tests until fear is transformed into boredom</q>
-      <p style="font-size: 0.5em">&mdash; Kent Beck</p>
-      <aside class="notes"><em>Questions?</em></aside>
-    </section>
-    <section id="review">
-      <section>
-        <h2>Review</h2>
-        <ul style="list-style-type: review">
-          <li class="fragment">Tests provide vital value.</li>
-          <li class="fragment">Test at various layers of abstraction.</li>
-          <li class="fragment">Developers should write tests.</li>
-          <li class="fragment">Tests should be written early.</li>
-        </ul>
-        <aside class="notes">
-          <ul>
-            <li>
-              Tests help to validate, verify, protect, document, document &amp; design our code
-              as well as to focus our work.
-            </li>
-            <li>
-              Functional, integrated and unit tests provide test value at distinct and important
-              layers of abstraction.
-            </li>
-            <li>
-              Developers should write tests with the help of QA, business analysts, customers
-              and SMEs.
-            </li>
-            <li>
-              Tests should be written early, preferably before implementing solutions so that we
-              can get test value as soon as possible.
-            </li>
-          </ul>
-        </aside>
-      </section>
-    </section>
-    <section>
-      <h1 class="r-fit-text">🖖</h1>
-      <aside class="notes"><em>Questions?</em></aside>
-    </section>
-  </div>
-</div>
-<script type="module" src="reveal.js"></script>
-</body>
+        </section>
+        <section id="overview">
+          <section><h2 class="r-fit-text">Goal</h2></section>
+          <section>
+            <h3>To Answer</h3>
+            <ul style="list-style-type: goal">
+              <li class="fragment"><em>Why</em> should we bother writing tests?</li>
+              <li class="fragment"><em>What</em> types of tests should be written?</li>
+              <li class="fragment"><em>Who</em> should write these tests?</li>
+              <li class="fragment"><em>When</em> should these tests be developed?</li>
+            </ul>
+            <aside class="notes">
+              <p></p>
+              <p>
+                <em>At End:</em> The other unwritten goal is to share some pithy testing quotes.
+              </p>
+            </aside>
+          </section>
+        </section>
+        <section class="quote">
+          <q
+            >I am pretty sure there is a difference between 'this has not been proven' and 'this is
+            false.'</q
+          >
+          <p style="font-size: 0.5em">&mdash; Ron Jeffries</p>
+        </section>
+        <section id="why">
+          <section>
+            <h2 class="r-fit-text">Why?</h2>
+            <aside class="notes">
+              <p>Why should we bother writing (automated) tests?</p>
+              <p>
+                <em>Poll:</em> Ask this as an open-ended question and try to get a few thoughts from
+                the audience.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>To Verify</h3>
+            <p class="fragment">Verification is needed, yet;</p>
+            <ul style="list-style-type: verify">
+              <li class="fragment">It is time-consuming to record test run details.</li>
+              <li class="fragment">It often happens haphazardly or inconsistently.</li>
+              <li class="fragment">It is hard to know if any shortcuts were taken.</li>
+            </ul>
+            <aside class="notes">
+              <p>
+                <em>At Start:</em> Verification is the process of validating that your software does
+                what it is required to do. Without this, we lack confidence that we have developed
+                what our customer needs.
+              </p>
+              <p>
+                <em>At End:</em> When verification is done manually we risk not having the proper
+                verification taking place, or not having it done correctly.
+              </p>
+              <p>With automated verifications:</p>
+              <ul>
+                <li>
+                  A single test run will consistently run all tests and can be triggered to happen
+                  on code changes/pushes.
+                </li>
+                <li>
+                  The test runner can automatically provide a record of the steps taken,
+                  verifications performed and identify any failed verifications.
+                </li>
+                <li>The test runner will run verifications the same way every time.</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>To Protect</h3>
+            <p class="fragment">Tests can protect us from value loss by validating:</p>
+            <ul style="list-style-type: protect">
+              <li class="fragment">Previously delivered functionality still works.</li>
+              <li class="fragment">Previously fixed bugs are still fixed.</li>
+              <li class="fragment">
+                A record of delivered functionality and bug fixes is never lost.
+              </li>
+            </ul>
+            <aside class="notes">
+              <p>
+                <em>At Start:</em> When software of value has been created, there is always the
+                potential for that value to be lost as new functionality is added.
+              </p>
+              <p>
+                <em>At End:</em> With automated tests you are able to get a quick indication of
+                value loss before it makes it to the customer.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>To Document</h3>
+            <p class="fragment">Tests are living documentation:</p>
+            <ul style="list-style-type: document">
+              <li class="fragment">Functional tests document use cases.</li>
+              <li class="fragment">Unit tests document design.</li>
+              <li class="fragment">
+                Both function as living examples of how to interface with your APIs.
+              </li>
+            </ul>
+            <aside class="notes">
+              <p>
+                <em>At Start:</em> Documentation is vital, but often does not track with new
+                changes.
+              </p>
+              <p>
+                <em>At End:</em> When your tests serve as documentation, they are guaranteed to
+                never go out of date!
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>To Design</h3>
+            <p class="fragment">Tests can provide timely feedback on your design:</p>
+            <ul style="list-style-type: design">
+              <li class="fragment">Hard to write tests often indicate bad designs.</li>
+              <li class="fragment">
+                Can give feedback about your design before you've sunk too much time into it.
+              </li>
+              <li class="fragment">
+                Help document your design and clearly identify its dependencies and data types.
+              </li>
+            </ul>
+            <aside class="notes">
+              <p>
+                <em>At Start:</em> Software design is a skill that requires you to step back and
+                think about the problem you're trying to solve and then plan out an evolvable
+                structure that a solution can be built on.
+              </p>
+              <p><em>At End:</em> Some example design feedbacks (smells) tests can expose:</p>
+              <ul>
+                <li>Too many dependencies implies your code has too many responsibilities.</li>
+                <li>
+                  Too many tests for a particular API implies that it is probably doing too much.
+                </li>
+                <li>
+                  If engaging your API feels weird, it might mean a name change is in order, or that
+                  some parameters should be extracted into their own type.
+                </li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>To Focus</h3>
+            <p class="fragment">How tests can guide you to more focused work:</p>
+            <ul style="list-style-type: focus">
+              <li class="fragment">
+                Functional tests force you to think about the problem before solving it.
+              </li>
+              <li class="fragment">
+                Unit tests help break down the problem into smaller parts that can be tackled one at
+                a time.
+              </li>
+              <li class="fragment">
+                Going from a functional test and then diving into supporting unit tests reduces
+                waste.
+              </li>
+              <li class="fragment">Failing tests can identify what to work on next.</li>
+            </ul>
+            <aside class="notes">
+              <p><em>At Start:</em></p>
+              <p>
+                Working on new functionality can get overwhelming when the functionality is complex.
+                Using tests to guide what you do next can help tame the complexity beast.
+              </p>
+              <p>
+                This helps to focus work on what is needed to meet current needs instead of future
+                uncertainties.
+              </p>
+            </aside>
+          </section>
+        </section>
+        <section class="quote">
+          <q
+            >No amount of testing can prove a software right, a single test can prove a software
+            wrong.</q
+          >
+          <p style="font-size: 0.5em">&mdash; Amir Ghahrai</p>
+          <aside class="notes"><em>Questions?</em></aside>
+        </section>
+        <section id="what">
+          <section>
+            <h2 class="r-fit-text">What?</h2>
+            <aside class="notes">
+              <p>What types of tests should be written?</p>
+              <p>
+                <em>Poll:</em> Ask this as an open-ended question and try to get a few thoughts from
+                the audience.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>Functional</h3>
+            <p class="fragment">These tests should:</p>
+            <ul style="list-style-type: what">
+              <li class="fragment">Capture actual user requirements.</li>
+              <li class="fragment">Be clean and readable.</li>
+              <li class="fragment">Test the system/solution like a black box.</li>
+              <li class="fragment">Exercise functionality as a user would.</li>
+            </ul>
+            <aside class="notes">
+              <p><em>At Start:</em></p>
+              <p>
+                Functional tests serve as a north star. When a functional (E2E/System/Solution) test
+                passes, it identifies that a user requirement has been met.
+              </p>
+              <p><em>At End:</em></p>
+              <p>
+                The quantity of functional tests should ~= just enough to give confidence that the
+                basic user's requirement have been met. Too many functional tests can slow down test
+                runs, thereby slowing down the feedback cycle. Edge cases can be tackled in
+                integrated or unit tests.
+              </p>
+              <p>
+                These tests are quite valuable as living documentation, showing what functionality
+                the solutions supports, and being executable you can always be confident that the
+                delivered value is never lost.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>Integrated</h3>
+            <p class="fragment">These tests should:</p>
+            <ul style="list-style-type: what">
+              <li class="fragment">Capture scenarios that support a failing functional test.</li>
+              <li class="fragment">Be clean and readable.</li>
+              <li class="fragment">Test a component like a black box.</li>
+              <li class="fragment">Exercise the component via its public API.</li>
+            </ul>
+            <aside class="notes">
+              <p><em>At Start:</em></p>
+              <p>
+                Integrated tests are useful when testing components that make up a part of a
+                solution. When an integrated test passes, it identifies that this component has
+                satisfied a use case that contributes to a functional test.
+              </p>
+              <p><em>At End:</em></p>
+              <p>
+                These tests help you focus when tackling an individual component, directing you to
+                only work on a single code path at a time.
+              </p>
+              <p>
+                These tests are quite valuable as living documentation, showing what use cases this
+                component is meant to serve, and being executable you can always be confident that
+                the delivered value is never lost during future changes.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>Unit</h3>
+            <p class="fragment">These tests should:</p>
+            <ul style="list-style-type: what">
+              <li class="fragment">Capture scenarios that support a failing integration test.</li>
+              <li class="fragment">Be clean and readable.</li>
+              <li class="fragment">Test a slice of the component like a black box.</li>
+              <li class="fragment">Exercise the slice via its public API.</li>
+            </ul>
+            <aside class="notes">
+              <p><em>At Start:</em></p>
+              <p>
+                Unit tests are often confused with testing a single function/class/method in
+                isolation. While they can be this, historically a unit was meant to reflect any
+                grouping of code that provides value when being programmatically tested.
+              </p>
+              <p><em>At End:</em></p>
+              <p>
+                These tests can help you focus on a single responsibility of a component without
+                having to focus on the entire problem that this component is trying to solve.
+              </p>
+              <p>
+                These tests are quite valuable as living documentation, showing the design of a
+                single component responsibility, and how the API of that responsibility can be
+                engaged.
+              </p>
+            </aside>
+          </section>
+        </section>
+        <section class="quote">
+          <q>All code is guilty until proven innocent.</q>
+          <p style="font-size: 0.5em">&mdash; Anonymous</p>
+          <aside class="notes"><em>Questions?</em></aside>
+        </section>
+        <section id="who">
+          <section>
+            <h2 class="r-fit-text">Who?</h2>
+            <aside class="notes">
+              <p>Who should write these tests?</p>
+              <p>
+                <em>Poll:</em> Ask this as an open-ended question and try to get a few thoughts from
+                the audience.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <video
+              title="Steve Balmer - Developers! Developers! Developers!"
+              height="340"
+              width="420"
+              muted
+              playsinline
+              autoplay
+              loop
+              preload="auto"
+              poster="https://thumbs.gfycat.com/ConfusedGracefulArgentinehornedfrog-mobile.jpg"
+            >
+              <source
+                src="https://zippy.gfycat.com/ConfusedGracefulArgentinehornedfrog.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <p style="font-size: small">
+              <a
+                href="https://gfycat.com/confusedgracefulargentinehornedfrog-steve-ballmer-developers"
+                >via Gfycat</a
+              >
+            </p>
+            <aside class="notes">
+              <p>
+                Steve Balmer in the memeified Microsoft developer's conference screaming:
+                "Developers! Developers! Developers!"
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>Developers!</h3>
+            <p class="fragment">Tests drive the attainment of domain knowledge:</p>
+            <ul style="list-style-type: who">
+              <li class="fragment">Functional tests drive problem exploration.</li>
+              <li class="fragment">Integration tests flesh out component roles.</li>
+              <li class="fragment">Unit tests drive solution &amp; design knowledge.</li>
+            </ul>
+            <aside class="notes">
+              <p>
+                <em>At Start:</em> Developers write the solution and must acquire the problem domain
+                knowledge necessary to provide the solution. Writing automated tests helps identify
+                knowledge gaps before trying to implement a solution. This is not a waste of your
+                time, instead it is a vital use of it! Who better than the ones who most need to
+                have this domain knowledge to write the tests?
+              </p>
+              <p><em>At End:</em> Reach out for help!</p>
+              <ul>
+                <li>
+                  QA is trained to find edge cases. They are great at giving ideas about how you can
+                  test from every angle.
+                </li>
+                <li>
+                  Business analysts, product owners &amp; the customer together can provide valuable
+                  context about the problem which helps identify what should be tested.
+                </li>
+                <li>
+                  SMEs in testing/technologies/the problem domain can help figure out how to set up
+                  a test environment and how to engage complicated systems as part of your tests.
+                </li>
+              </ul>
+            </aside>
+          </section>
+        </section>
+        <section class="quote">
+          <q
+            >The problem is not that testing is the bottleneck. The problem is that you don’t know
+            what's in the bottle. That's a problem that testing addresses.</q
+          >
+          <p style="font-size: 0.5em">&mdash; Michael Bolton</p>
+          <aside class="notes"><em>Questions?</em></aside>
+        </section>
+        <section id="when">
+          <section>
+            <h2 class="r-fit-text">When?</h2>
+            <aside class="notes">
+              <p>When should these tests be developed?</p>
+              <p>
+                <em>Poll:</em> Ask this as an open-ended question and try to get a few thoughts from
+                the audience.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>After</h3>
+            <ul style="list-style-type: happy-to-sad">
+              <li class="fragment">You start writing production code quicker.</li>
+              <li class="fragment">It takes longer to finish the production code.</li>
+              <li class="fragment">You get late feedback on your design.</li>
+              <li class="fragment">The tests are harder to write.</li>
+              <li class="fragment">Often doesn't happen.</li>
+            </ul>
+            <aside class="notes">
+              <p><em>At End:</em></p>
+              <ul>
+                <li>Because you don't have to think first, you can start writing code sooner.</li>
+                <li>
+                  But the finished code takes longer to produce as you were not forced to think
+                  through the problem before trying to solve it.
+                </li>
+                <li>
+                  Since you don't get test feedback on your design early on, its often too late to
+                  act on what it tells you as too much time has already been sunk into what exists.
+                </li>
+                <li>
+                  Since the code wasn't written with tests in mind, the tests are harder to write
+                  and often require redesigns of your production code.
+                </li>
+                <li>
+                  At the end of a development cycle, time crunches are real which cause left over
+                  things to be dropped, such as tests.
+                </li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Before</h3>
+            <ul style="list-style-type: sad-to-happy">
+              <li class="fragment">You start writing production code later.</li>
+              <li class="fragment">It takes less time to finish the production code.</li>
+              <li class="fragment">You get early feedback on your design.</li>
+              <li class="fragment">The tests are easier to write.</li>
+              <li class="fragment">You have the time to write them.</li>
+            </ul>
+            <aside class="notes">
+              <p><em>During:</em></p>
+              <ul>
+                <li>
+                  By being forced to think through the problem in order to write a test for it,
+                  starting to write the solution gets delayed.
+                </li>
+                <li>
+                  Since the problem has already been thought through, it takes less time to write
+                  the final solution.
+                </li>
+                <li>
+                  You can get feedback on the design before you implement it, so its really quick
+                  and cheap to act on any feedback you get.
+                </li>
+                <li>
+                  With the problem fresh in your mind, and without having production code already
+                  written to constrain setting it up in the test, tests are quicker to write.
+                </li>
+                <li>
+                  With the tests happening first, and having the constraint that the solution cannot
+                  be shipped without the code being written, you should always be able to have the
+                  time to write the tests.
+                </li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Mixture</h3>
+            <p class="fragment">For brownfield code you can:</p>
+            <ol>
+              <li class="fragment">Selectively write tests around existing code.</li>
+              <li class="fragment">Safely improve the existing design.</li>
+              <li class="fragment">Write tests for what is new.</li>
+            </ol>
+            <aside class="notes">
+              <p><em>At Start:</em></p>
+              <p>
+                Reality is rarely so simple. On a brownfield system you will often have a lot of
+                untested code.
+              </p>
+              <p><em>During:</em></p>
+              <ul>
+                <li>
+                  Identify the area of the solution that will have to be touched to introduce
+                  changes and write tests around its existing functionality.
+                </li>
+                <li>
+                  With the protection of tests around the existing code, redesign the tested code to
+                  improve its quality, so it's easier to extend.
+                </li>
+                <li>
+                  Write functional/integration/unit tests for the new functionality that is to be
+                  introduced.
+                </li>
+              </ul>
+            </aside>
+          </section>
+        </section>
+        <section class="quote">
+          <q>Write tests until fear is transformed into boredom</q>
+          <p style="font-size: 0.5em">&mdash; Kent Beck</p>
+          <aside class="notes"><em>Questions?</em></aside>
+        </section>
+        <section id="review">
+          <section>
+            <h2>Review</h2>
+            <ul style="list-style-type: review">
+              <li class="fragment">Tests provide vital value.</li>
+              <li class="fragment">Test at various layers of abstraction.</li>
+              <li class="fragment">Developers should write tests.</li>
+              <li class="fragment">Tests should be written early.</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>
+                  Tests help to validate, verify, protect, document, document &amp; design our code
+                  as well as to focus our work.
+                </li>
+                <li>
+                  Functional, integrated and unit tests provide test value at distinct and important
+                  layers of abstraction.
+                </li>
+                <li>
+                  Developers should write tests with the help of QA, business analysts, customers
+                  and SMEs.
+                </li>
+                <li>
+                  Tests should be written early, preferably before implementing solutions so that we
+                  can get test value as soon as possible.
+                </li>
+              </ul>
+            </aside>
+          </section>
+        </section>
+        <section>
+          <h1 class="r-fit-text">🖖</h1>
+          <aside class="notes"><em>Questions?</em></aside>
+        </section>
+      </div>
+    </div>
+    <script type="module" src="reveal.js"></script>
+  </body>
 </html>
