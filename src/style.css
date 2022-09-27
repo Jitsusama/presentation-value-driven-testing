@@ -76,9 +76,21 @@
   suffix: " ";
 }
 
+@counter-style involvement {
+  system: cyclic;
+  symbols: "🫅" "👨‍💼" "👩‍💻" "🌎";
+  suffix: " ";
+}
+
 @counter-style who {
   system: cyclic;
   symbols: "👩‍💻" "👨‍💻";
+  suffix: " ";
+}
+
+@counter-style resources {
+  system: cyclic;
+  symbols: "👩‍💼" "🧑‍🔧" "👨‍⚕️" "🕵️‍♀️";
   suffix: " ";
 }
 

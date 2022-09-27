@@ -303,32 +303,85 @@
           <section>
             <h2 class="r-fit-text">Who?</h2>
             <aside class="notes">
-              <p>Who should write these tests?</p>
+              <p>This section will attempt to answer the following questions:</p>
+              <ul>
+                <li>Who should be involved in automated testing?</li>
+                <li>Who should write the automated test code?</li>
+                <li>What resources are available to help when writing automated tests?</li>
+              </ul>
               <p>
-                <em>Poll:</em> Ask this as an open-ended question and try to get a few thoughts from
-                the audience.
+                A key strategy for getting value from tests is having the right people involved in
+                defining, developing and supporting them. Without this, the tests probably will not
+                give you the right level of value as they will not properly capture the problem,
+                they will not be easy to extend with changing needs, or they will not be exposed to
+                the people who need them.
               </p>
             </aside>
           </section>
           <section>
-            <video
-              title="Steve Balmer - Developers! Developers! Developers!"
-              height="340"
-              width="420"
-              muted
-              playsinline
-              autoplay
-              loop
-              preload="auto"
-              poster="https://thumbs.gfycat.com/ConfusedGracefulArgentinehornedfrog-mobile.jpg"
-            >
-              <source
-                src="https://zippy.gfycat.com/ConfusedGracefulArgentinehornedfrog.mp4"
-                type="video/mp4"
-              />
-            </video>
-            <p style="font-size: small">
-              <a
+            <h3>Involvement</h3>
+            <p class="fragment">Who should be involved?</p>
+            <ul style="list-style: involvement">
+              <li class="fragment">The customer.</li>
+              <li class="fragment">The product team.</li>
+              <li class="fragment">The engineering teams.</li>
+              <li class="fragment">Everyone!</li>
+            </ul>
+            <aside class="notes">
+              <p>
+                <em>At Start:</em> When you try to find a single team who should solely be
+                responsible for the ideation/creation/support of tests it makes it nearly impossible
+                to build a list of tests that accurately reflect the product's and customer's needs
+                as they are trying to do this in isolation.
+              </p>
+              <p><em>At Middle:</em> So who all should get involved?</p>
+              <ul>
+                <li>
+                  The <em>customer</em> is the one we are delivering the product to. Having them
+                  involved in defining the needed functional tests will ensure that they reflect the
+                  solution that they desire.
+                </li>
+                <li>
+                  The <em>product</em> team should have a handle on the entire technical solution.
+                  Having them help in test creation will give them a shared view about the planned
+                  work. And when they see those tests pass, they will have an accurate view as to
+                  what work is left to be done.
+                </li>
+                <li>
+                  The <em>engineering</em> teams are the ones who are writing the implementation of
+                  the solutions. They need to have a shared understanding of what functionality to
+                  deliver and be able to tell when they have meet the requirements.
+                </li>
+              </ul>
+              <p>
+                <em>At End:</em> The best solution includes getting involvement from everyone to
+                make sure that the tests properly reflect what needs to be delivered and are
+                accepted by everyone as the standard by which functionality delivery has been
+                achieved.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>Writing</h3>
+            <p class="fragment">Who should write the tests?</p>
+            <p class="fragment" style="font-size: small">
+              <video
+                title="Steve Balmer - Developers! Developers! Developers!"
+                height="340"
+                width="420"
+                muted
+                playsinline
+                autoplay
+                loop
+                preload="auto"
+                poster="https://thumbs.gfycat.com/ConfusedGracefulArgentinehornedfrog-mobile.jpg"
+              >
+                <source
+                  src="https://zippy.gfycat.com/ConfusedGracefulArgentinehornedfrog.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <br /><a
                 href="https://gfycat.com/confusedgracefulargentinehornedfrog-steve-ballmer-developers"
                 >via Gfycat</a
               >
@@ -341,34 +394,67 @@
             </aside>
           </section>
           <section>
-            <h3>Developers!</h3>
-            <p class="fragment">Tests drive the attainment of domain knowledge:</p>
+            <h3>Writing</h3>
+            <p>Why should developers write the tests?</p>
             <ul style="list-style-type: who">
+              <li class="fragment">Automated tests are software.</li>
               <li class="fragment">Functional tests drive problem exploration.</li>
               <li class="fragment">Integration tests flesh out component roles.</li>
               <li class="fragment">Unit tests drive solution &amp; design knowledge.</li>
             </ul>
             <aside class="notes">
+              <p><em>At Start:</em></p>
               <p>
-                <em>At Start:</em> Developers write the solution and must acquire the problem domain
-                knowledge necessary to provide the solution. Writing automated tests helps identify
-                knowledge gaps before trying to implement a solution. This is not a waste of your
-                time, instead it is a vital use of it! Who better than the ones who most need to
-                have this domain knowledge to write the tests?
+                Developers write the solution and must acquire the problem domain knowledge
+                necessary to provide the solution. Writing automated tests helps identify knowledge
+                gaps before trying to implement a solution. This is not a waste of your time,
+                instead it is a vital use of it! Who better than the ones who most need to have this
+                domain knowledge to write the tests?
               </p>
+              <p>
+                As well, automated tests are code that should be written as real software, so who
+                better than a developer to make sure that proper design methodologies are followed
+                in their creation?
+              </p>
+              <p>
+                <em>At End:</em> Which developers should write the tests? Whichever developer is
+                closest to the layer of abstraction that is being developed. This could be
+                professional QA developers working with the other development teams to capture
+                end-to-end tests along with developing the infrastructure necessary to set them up.
+                It could be integration developers writing higher level tests across multiple
+                components in a solution. It could be component developers writing tests that
+                validate their component in isolation from the rest of the system.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>Resources</h3>
+            <p class="fragment">What help is available?</p>
+            <ul style="list-style: resources">
+              <li class="fragment">The customer and product team.</li>
+              <li class="fragment">Other engineering teams.</li>
+              <li class="fragment">Subject matter experts.</li>
+              <li class="fragment">The QA team.</li>
+            </ul>
+            <aside class="notes">
               <p><em>At End:</em> Reach out for help!</p>
               <ul>
-                <li>
-                  QA is trained to find edge cases. They are great at giving ideas about how you can
-                  test from every angle.
-                </li>
                 <li>
                   Business analysts, product owners &amp; the customer together can provide valuable
                   context about the problem which helps identify what should be tested.
                 </li>
                 <li>
+                  Other engineering teams involved in the same project can often give a lot of
+                  helpful context when you are trying to write a test at the layer of abstraction
+                  you are involved in.
+                </li>
+                <li>
                   SMEs in testing/technologies/the problem domain can help figure out how to set up
                   a test environment and how to engage complicated systems as part of your tests.
+                </li>
+                <li>
+                  QA is trained to find edge cases. They are great at giving ideas about how you can
+                  test from every angle.
                 </li>
               </ul>
             </aside>
