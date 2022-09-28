@@ -1,6 +1,10 @@
 @import url("../node_modules/reveal.js/dist/reveal.css");
 @import url("../node_modules/reveal.js/dist/theme/night.css");
 
+/*
+ * General Slide Formatting
+ */
+
 .slides dl {
   font-size: 0.7em;
 }
@@ -21,6 +25,10 @@
 .slides h3 {
   font-size: 3em;
 }
+
+/*
+ * List Styles
+ */
 
 @counter-style goal {
   system: cyclic;

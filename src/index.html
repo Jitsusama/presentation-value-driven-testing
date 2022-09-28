@@ -271,8 +271,8 @@
             <ul style="list-style-type: what">
               <li class="fragment">Capture scenarios that support a failing integration test.</li>
               <li class="fragment">Be clean and readable.</li>
-              <li class="fragment">Test a slice of the component like a black box.</li>
-              <li class="fragment">Exercise the slice via its public API.</li>
+              <li class="fragment">Test a layer of the component like a black box.</li>
+              <li class="fragment">Exercise the layer via its public API.</li>
             </ul>
             <aside class="notes">
               <p><em>At Start:</em></p>
@@ -291,6 +291,48 @@
                 single component responsibility, and how the API of that responsibility can be
                 engaged.
               </p>
+            </aside>
+          </section>
+          <section>
+            <h3>Type Review</h3>
+            <p class="fragment">Test types purposefully overlap:</p>
+            <div class="r-stack">
+              <img
+                class="fragment"
+                src="images/test-type-functional.svg"
+                alt="illustration of overarching functional tests."
+              />
+              <img
+                class="fragment"
+                src="images/test-type-integrated.svg"
+                alt="illustration of integrated tests living within functional tests"
+              />
+              <img
+                class="fragment"
+                src="images/test-type-unit.svg"
+                alt="illustration of unit tests living within functional and integrated tests"
+              />
+            </div>
+            <aside class="notes">
+              <p><em>During:</em></p>
+              <ul>
+                <li>
+                  Functional tests should engage the system from the outside in and validate
+                  anything external to the system is correctly stubbed/mocked.
+                </li>
+                <li>
+                  Integrated tests should overlap with a cross-section of the functional tests, but
+                  isolate a component of the system. They should engage that component from the
+                  outside in and validate that anything external to that component is correctly
+                  stubbed/mocked.
+                </li>
+                <li>
+                  Unit tests should overlap with a cross-section of the integrated tests, but
+                  isolate a single layer/concern of that cross-section. They should engage that
+                  layer from the outside in and validate that anything external to that layer is
+                  correctly stubbed/mocked.
+                </li>
+              </ul>
             </aside>
           </section>
         </section>

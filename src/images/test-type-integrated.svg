@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="322.0475" height="322.0475"
+     viewBox="0 0 85.2084 85.2084">
+  <g stroke-linejoin="round" transform="translate(-197.5035 -80.2062)">
+    <circle cx="240.1077" cy="132.6961" r="28.3262" fill="#7f7" stroke="#060" stroke-width=".8"/>
+    <text x="240.1098" y="117.7292" fill="#060" stroke-width=".8" font-family="Arial"
+          font-size="4.2333" font-weight="400" style="text-align:center" text-anchor="middle">
+      <tspan x="240.1098" y="117.7292" font-weight="700">Integrated</tspan>
+      <tspan x="240.1098" y="123.0312" font-style="italic">Component</tspan>
+    </text>
+  </g>
+</svg>
