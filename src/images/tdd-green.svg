@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="304.8977" height="315.1471" viewBox="0 0 80.6709 83.3827">
+  <g stroke-linejoin="round" transform="translate(-2.2727 -.6849)">
+    <path id="passing-line" fill="none" stroke="#7f7" stroke-width="15"
+          d="M42.608 10.847a32.8354 32.8603 0 0 1 32.8355 32.8603 32.8354 32.8603 0 0 1-4.3964 16.4254"/>
+    <path id="failing-line" fill="none" stroke="#f77" stroke-width="15"
+          d="M14.169 60.1325a32.8354 32.8603 0 0 1-4.3963-16.4252A32.8354 32.8603 0 0 1 42.608 10.847"/>
+    <path id="failing-arrow" fill="#f77" stroke="#f77" stroke-linecap="round" stroke-width="1.065"
+          d="M42.6082 20.4767v-4.8149m0 0V6.0322m-.007 0V1.2173c11.6907 10.6654 10.727 10.5005 10.727 10.5005l-10.7199 8.7589"/>
+    <path id="passing-arrow" fill="#7f7" stroke="#7f7" stroke-linecap="round" stroke-width="1.065"
+          d="m62.7941 55.1861 4.1265 2.4098m0 0 8.2529 4.8194m.0036-.0053 4.1264 2.4098c-14.9275 4.8004-14.3092 4.0471-14.3092 4.0471L62.7941 55.187"/>
+    <text fill="#940800" font-family="Arial" font-size="8" font-weight="500"
+          style="text-align:center" text-anchor="middle">
+      <textPath xlink:href="#failing-path" startOffset="50%">Failing Test</textPath>
+    </text>
+    <text fill="#060" font-family="Arial" font-size="8" font-weight="500" style="text-align:center"
+          text-anchor="middle">
+      <textPath xlink:href="#passing-path" startOffset="48%">Passing Test</textPath>
+    </text>
+    <path id="failing-path" fill="none" stroke="none"
+          d="M13.3489 47.6901a29.53 29.2984 0 0 1 6.9594-23.193 29.53 29.2984 0 0 1 22.17-10.088"/>
+    <path id="passing-path" fill="none" stroke="none"
+          d="M54.1738 16.751a29.53 29.2984 0 0 1 16.3235 17.3356A29.53 29.2984 0 0 1 68.5327 57.73"/>
+  </g>
+</svg>
